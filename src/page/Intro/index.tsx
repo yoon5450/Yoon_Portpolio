@@ -5,16 +5,32 @@ import LinkButton from "@/component/LinkButton";
 
 function Intro() {
   return (
-    <div className="relative bg-bg_primary h-[60vh] w-full">
-      <div className="absolute top-1/12 left-1/12 h-screen p-0 bg-bg_primary w-fit">
+    <div className="relative bg-orange-400 h-[60vh] w-full flex flex-col justify-between pl-[8%] pr-[8%] text-gray-100">
+      <div className="mt-[2%]">
         <div className="font-semibold font-mono text-7xl text-gray-800 w-fit">
-          PORTPOLIO
+          PORTFOLIO
         </div>
         <div className="font-[pretendard] w-fit text-xl">
           구조화를 지향하는 프론트엔드 개발자 윤대웅입니다.
         </div>
       </div>
-      <div className="flex absolute bottom-1/12 left-1/12 gap-2 ">
+
+      <div className="flex-1 flex items-center justify-end">
+        <div className="font-[pretendard] text-xl md:text-2xl leading-relaxed max-w-[60ch] text-right ">
+          <p className="mb-4">
+            {" "}
+            안녕하세요. 프론트엔드 개발자 윤대웅입니다. <br />
+            프로그램의 구조를 잘 이해하는 개발자를 지향하고 있습니다.
+          </p>
+          <p>
+            {" "}
+            레이아웃 구조와 생명주기에 관심을 가지면서 <br />
+            프론트엔드 개발자에 흥미를 가지게 되었습니다.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex gap-2 mb-[4%] ">
         <LinkButton
           intent="primary"
           size="lg"
@@ -29,7 +45,7 @@ function Intro() {
         <LinkButton
           intent="primary"
           size="lg"
-          className="py-2 bg-orange-400 hover:bg-orange-500"
+          className="py-2 bg-white hover:bg-gray-200 text-gray-800"
           onClick={() =>
             window.open("https://yun-engene.tistory.com/", "newWindow")
           }
@@ -38,12 +54,6 @@ function Intro() {
           Tistory
         </LinkButton>
       </div>
-      <p className="w-fit  font-[pretendard] text-2xl">
-        안녕하세요. 프론트엔드 개발자 윤대웅입니다. <br /> 프로그램의 구조를 잘
-        이해하는 개발자를 지향하고 있습니다. <br /> 레이아웃 구조와 생명주기에
-        관심을 가지면서 <br /> 프론트엔드 개발자에 흥미를 가지게
-        되었습니다.{" "}
-      </p>
     </div>
   );
 }
