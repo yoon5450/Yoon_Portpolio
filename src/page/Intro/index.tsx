@@ -8,7 +8,7 @@ function Intro() {
     <div className="relative bg-orange-400 h-[60vh] w-full flex flex-col justify-between pl-[8%] pr-[8%] text-gray-100">
       <div className="mt-[2%]">
         <div className="font-semibold font-mono text-7xl text-gray-800 w-fit">
-          PORTFOLIO
+          YOON'<span className="-m-3">s</span> PORTFOLIO
         </div>
         <div className="font-[pretendard] w-fit text-xl">
           구조화를 지향하는 프론트엔드 개발자 윤대웅입니다.
@@ -16,7 +16,7 @@ function Intro() {
       </div>
 
       <div className="flex-1 flex items-center justify-end">
-        <div className="font-[pretendard] text-xl md:text-2xl leading-relaxed max-w-[60ch] text-right ">
+        <div className="font-[pretendard] text-xl md:text-2xl leading-relaxed max-w-[60ch] text-right">
           <p className="mb-4">
             {" "}
             안녕하세요. 프론트엔드 개발자 윤대웅입니다. <br />
@@ -27,6 +27,9 @@ function Intro() {
             레이아웃 구조와 생명주기에 관심을 가지면서 <br />
             프론트엔드 개발자에 흥미를 가지게 되었습니다.
           </p>
+          <button className="text-xl cursor-pointer text-gray-600">
+            + 더 알아보기
+          </button>
         </div>
       </div>
 
@@ -45,7 +48,7 @@ function Intro() {
         <LinkButton
           intent="primary"
           size="lg"
-          className="py-2 bg-white hover:bg-gray-200 text-gray-800"
+          className="py-2 bg-white hover:bg-gray-100 text-gray-800 border-gray-200 "
           onClick={() =>
             window.open("https://yun-engene.tistory.com/", "newWindow")
           }

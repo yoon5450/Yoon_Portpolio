@@ -2,7 +2,10 @@
 
 @layer base {
   :root {
-    --color-bg_primary: #FBFFF7;
-  };
+    --color-bg_primary: #fbfff7;
+    font-family: "Pretendard Variable", sans-serif;
+  }
 
+  document {
+  }
 }

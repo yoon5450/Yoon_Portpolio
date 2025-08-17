@@ -1,4 +1,4 @@
-import tw from "@/page/utils/tw";
+import tw from "@/utils/tw";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva("inline-flex items-center rounded-md px-8 py-2 box-border cursor-pointer", {
