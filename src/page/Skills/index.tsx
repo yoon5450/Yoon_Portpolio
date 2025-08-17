@@ -69,7 +69,7 @@ function Skills() {
       <hr className="text-gray-200" />
 
       <div>hover 예시</div>
-      <div className="group relative rounded-xl overflow-hidden hover:scale-105 translate-0.5">
+      <div className="group relative rounded-xl overflow-hidden hover:scale-105 transition">
         <img src="/thumb.jpg" className="w-full h-64 object-cover" />
         <div
           className="pointer-events-none absolute inset-0 
