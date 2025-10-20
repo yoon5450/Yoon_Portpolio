@@ -11,6 +11,8 @@ function SkillTag({ name }: { name: string }) {
     scss: "bg-[#CC6699] text-white",
     react: "bg-[#61DAFB] text-white",
     "react router": "bg-[#CA4245] text-white",
+    "next.js": "bg-black text-white",
+    "react-hook-form": "bg-[#EC5990] text-white",
     tailwindcss: "bg-[#06B6D4] text-white",
     figma: "bg-[#F24E1E] text-white",
     vite: "bg-[#646CFF] text-white",
@@ -19,6 +21,8 @@ function SkillTag({ name }: { name: string }) {
     postgresql: "bg-[#336791] text-white",
     flask: "bg-black text-white",
     mongodb: "bg-[#47A248] text-white",
+    axios: "bg-[#5A29E4] text-white",
+    zod: "bg-[#3E63DD] text-white",
 
     vercel: "bg-black text-white",
     "git/github": "bg-[#24292F] text-white",

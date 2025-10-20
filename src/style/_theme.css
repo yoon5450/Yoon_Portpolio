@@ -1,0 +1,49 @@
+@theme {
+  /* 🎨 색상 팔레트 */
+  --color-primary: #3b82f6; /* 파랑 계열 기본 */
+  --color-primary-hover: #2563eb;
+  --color-secondary: #8b5cf6; /* 보라 계열 */
+  --color-accent: #f59e0b; /* 포인트 색상 */
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #fbbf24;
+  --color-info: #0ea5e9;
+  --color-primary-background: #0a0a0a;
+  --color-subtext: #a1a1a1;
+
+  /* 🖋 폰트 */
+  --font-family-sans: "Inter", "Noto Sans KR", sans-serif;
+  --font-family-mono: "Fira Code", monospace;
+  --font-main: "Pretendard Variable", sans-serif;
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* 📐 Border */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --color-bg: var(--color-gray-50);
+  --color-text: var(--color-gray-900);
+  --color-border: var(--color-gray-200);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-gray-900);
+    --color-text: var(--color-gray-100);
+    --color-border: var(--color-gray-700);
+  }
+} */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}

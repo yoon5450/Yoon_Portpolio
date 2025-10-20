@@ -1,6 +1,10 @@
-/* @import './_reset.css'; */
-@import './_scroll.css';
-/* @import './_token.css'; */
-@import './_tailwind.css';
+@layer theme, base, components, utilities;
 
+@import "tailwindcss/theme.css" layer(theme);
+@import "./_theme.css";
 
+@import "tailwindcss/preflight.css" layer(base);
+@import "./_base.css";
+
+@import "./_tailwind.css";
+@import "./_scroll.css";

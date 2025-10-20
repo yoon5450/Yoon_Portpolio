@@ -1,0 +1,15 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    min-block-size: 99vh;
+    font-family: var(--font-main);
+  }
+	p {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}

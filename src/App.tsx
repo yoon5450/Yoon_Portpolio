@@ -1,16 +1,10 @@
-import Footer from "./component/Layout/Footer";
-import About from "./page/About";
-import Intro from "./page/Intro";
-import Skills from "./page/Skills";
+import { RouterProvider } from "react-router";
+import { router } from "./Router/router";
 
 function App() {
   return (
     <>
-      <Intro />
-      <About />
-      <Skills/>
-
-      <Footer/>
+      <RouterProvider router={router} />
     </>
   );
 }
