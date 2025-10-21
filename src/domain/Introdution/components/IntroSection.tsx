@@ -1,9 +1,6 @@
-import tistoryIcon from "@/assets/tistory.svg";
-import githubIcon from "@/assets/github-mark-white.svg";
 import avatar from "@/assets/yoon.jpg";
 import { useState } from "react";
 import IntroductionSummary from "./IntroductionSummary";
-import LinkButton from "@/share/components/LinkButton";
 
 const Introdution = [
   {
@@ -16,7 +13,7 @@ const Introdution = [
   },
   {
     title: "실행과 성찰을 병행하는 개발자입니다.",
-    desc: "저는 실행 속도도 중요하지만, 명확한 기준과 지속 가능한 구조를더 중요하게 생각합니다. 필요할 때는 속도를 높여 빠르게 해결하되, 시행착오를 분석하고 개선하는 습관이 있는 사람입니다. “왜 이렇게 동작하는가”, “이 기술의 철학과 등장 배경은무엇인지” 고민하고 끝까지 탐구하는 태도로 성장하고 있습니다.",
+    desc: "명확한 기준과 지속 가능한 구조를 중요하게 생각합니다. 필요할 때는 속도를 높여 빠르게 해결하되, 시행착오를 분석하고 개선하는 습관이 있는 사람입니다. 고민하고 끝까지 탐구하는 태도로 성장하고 있습니다.",
   },
 ];
 
@@ -24,46 +21,71 @@ function IntroSection() {
   const [selectedSummary, setSelectedSummary] = useState<number | null>(null);
 
   return (
-    <div className="relative pt-20 bg-primary-background h-[100vh] w-full flex flex-col px-[8%] ">
-      <div className="flex flex-col md:flex-row gap-0 md:gap-4">
-        <div className="w-1/8">
+    <div className="relative py-20 bg-primary-background w-full flex flex-col px-[8%]">
+      {/* 제목 영역 */}
+      <h1 className="font-family-perm text-3xl text-white font-normal">
+        About Me
+      </h1>
+
+      {/* 컨텐츠 영역 */}
+      <div className="flex flex-col md:flex-row gap-0 md:gap-12 py-20 px-10 items-center">
+        <div className="w-50">
           <img src={avatar} alt="프로필" className="rounded-md object-cover" />
         </div>
-        <div className="flex flex-col gap-3">
-          <div className="font-semibold font-family-pret text-4xl text-white w-fit border-b p-2">
-            윤대웅
+
+        {/* 2층 아이템 (이름)*/}
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-3">
+            <div className="font-semibold font-family-pret text-3xl text-white w-fit border-b p-2">
+              윤대웅
+            </div>
+            <div className="font-family-pret w-fit text-xl text-subtext">
+              “왜”를 먼저 생각하고 “어떻게”를 구현하는 프론트엔드 개발자
+              윤대웅입니다.
+            </div>
           </div>
-          <div className="font-family-pret w-fit text-xl text-subtext">
-            “왜”를 먼저 생각하고 “어떻게”를 구현하는 프론트엔드 개발자
-            윤대웅입니다.
-          </div>
-          <div className="flex gap-2 flex-1 items-end">
-            <LinkButton
-              intent="primary"
-              size="lg"
-              className="py-2"
-              onClick={() =>
-                window.open("https://github.com/yoon5450", "newWindow")
-              }
-            >
-              <img className="h-5 mr-2" src={githubIcon} alt="깃허브" />
-              Github
-            </LinkButton>
-            <LinkButton
-              intent="primary"
-              size="lg"
-              className="py-2 bg-white hover:bg-gray-100 text-gray-800 border-gray-200 hover:border-gray-800"
-              onClick={() =>
-                window.open("https://yun-engene.tistory.com/", "newWindow")
-              }
-            >
-              <img className="h-5 mr-2" src={tistoryIcon} alt="티스토리" />
-              Tistory
-            </LinkButton>
+
+          {/* 1층 아이템 */}
+          <div className="flex gap-12 flex-wrap">
+            <div className="flex flex-col gap-3 items-center">
+              <div className="font-semibold font-family-pret text-3xl text-white w-fit border-b p-2">
+                생년월일
+              </div>
+              <div className="font-family-pret w-fit text-xl text-subtext">
+                1998. 05. 14
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 items-center">
+              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+                최종학력
+              </div>
+              <div className="font-family-pret w-fit text-xl text-subtext">
+                공주대학교 컴퓨터공학과
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 items-center">
+              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+                이메일
+              </div>
+              <div className="font-family-pret w-fit text-xl text-subtext">
+                dbseodnd356@gmail.com
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 items-center">
+              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+                연락처
+              </div>
+              <div className="font-family-pret w-fit text-xl text-subtext">
+                010-5743-5450
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1">
+      <div className="flex gap-8 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1">
         {Introdution.map(({ title, desc }, index) => (
           <IntroductionSummary
             title={title}
@@ -73,7 +95,6 @@ function IntroSection() {
                 ? setSelectedSummary(null)
                 : setSelectedSummary(index)
             }
-            isOpen={selectedSummary === index}
           />
         ))}
       </div>

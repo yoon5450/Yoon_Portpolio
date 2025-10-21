@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MdArrowDropDown } from "react-icons/md";
+// import { MdArrowDropDown } from "react-icons/md";
 import tw from "@/utils/tw";
 
 interface Props {
@@ -11,10 +11,10 @@ interface Props {
 }
 
 function IntroductionSummary({
-  className,
   title,
   desc,
-  isOpen = false,
+  className,
+  isOpen = true,
   onClick,
 }: Props) {
   return (
@@ -29,10 +29,10 @@ function IntroductionSummary({
         onClick={onClick}
       >
         <h3 className="text-white">{title}</h3>
-        <MdArrowDropDown size={24} color="white" />
+        {/* <MdArrowDropDown size={24} color="white" /> */}
       </button>
 
-      {isOpen && <p className="text-subtext mt-2">{desc}</p>}
+      {isOpen && <p className="text-subtext mt-2 leading-8 text-sm">{desc}</p>}
     </motion.div>
   );
 }
