@@ -1,5 +1,5 @@
-import ListItems from "@/component/ListItems";
 import { useId } from "react";
+import ListItems from "./ListItems";
 
 function AboutSection() {
   const profileId = useId();
@@ -16,7 +16,12 @@ function AboutSection() {
             src="https://avatars.githubusercontent.com/u/203302518?v=4"
             alt=""
           />
-          <label className="text-xl font-[pretendard] font-semibold" htmlFor={profileId}>윤대웅</label>
+          <label
+            className="text-xl font-[pretendard] font-semibold"
+            htmlFor={profileId}
+          >
+            윤대웅
+          </label>
         </div>
 
         <ListItems ulClassName="flex-1" />

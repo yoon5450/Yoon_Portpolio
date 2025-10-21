@@ -1,6 +1,6 @@
-import AboutSection from "@/component/AboutSection";
-import SkillsSection from "@/component/SkillsSection";
-import IntroSection from "@/component/IntroSection";
+import AboutSection from "@/domain/About/components/AboutSection";
+import IntroSection from "@/domain/Introdution/components/IntroSection";
+import SkillsSection from "@/domain/Skills/components/SkillsSection";
 
 function Main() {
   return (

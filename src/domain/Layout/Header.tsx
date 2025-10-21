@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import tw from "@/utils/tw";
 import { Link } from "react-router-dom";
+import tw from "../../utils/tw";
 
 interface HeaderProps {
   variant?: "default" | "transparent" | "light" | "primary";
@@ -103,7 +103,7 @@ function Header({ variant = "transparent" }: HeaderProps) {
       <header
         className={`w-full h-15 ${styles.background} transition-colors duration-300 fixed top-0 left-0 right-0 z-50`}
       >
-        <div className="max-w-[1440px] mx-auto px-5 min-[1440px]:px-0 h-15 flex-shrink-0 items-center justify-between flex">
+        <div className="px-[8%] mx-auto max-[1440px]:px-4 h-15 flex-shrink-0 items-center justify-between flex">
           <Link to="/" className="flex items-center gap-2">
             <h1 className={`text-xl font-bold font-family-logo ${styles.text}`}>
               YOON's PORTFOLIO

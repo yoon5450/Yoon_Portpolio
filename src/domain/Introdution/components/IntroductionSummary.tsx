@@ -1,0 +1,39 @@
+import { motion } from "motion/react";
+import { MdArrowDropDown } from "react-icons/md";
+import tw from "@/utils/tw";
+
+interface Props {
+  title: string;
+  desc: string;
+  isOpen?: boolean;
+  className?: string;
+  onClick?: () => void;
+}
+
+function IntroductionSummary({
+  className,
+  title,
+  desc,
+  isOpen = false,
+  onClick,
+}: Props) {
+  return (
+    <motion.div
+      className={tw("w-120", className)}
+      initial={{ opacity: 0, translateX: -50 }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+    >
+      <button
+        type="button"
+        className="flex items-center border-b border-white"
+        onClick={onClick}
+      >
+        <h3 className="text-white">{title}</h3>
+        <MdArrowDropDown size={24} color="white" />
+      </button>
+
+      {isOpen && <p className="text-subtext mt-2">{desc}</p>}
+    </motion.div>
+  );
+}
+export default IntroductionSummary;

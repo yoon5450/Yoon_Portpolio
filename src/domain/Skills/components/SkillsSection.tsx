@@ -1,5 +1,5 @@
-import SkillTag from "@/component/SkillTag";
 import { Code2, MonitorSmartphone, Server, Cloud } from "lucide-react";
+import SkillTag from "./SkillTag";
 
 function SkillsSection() {
   return (

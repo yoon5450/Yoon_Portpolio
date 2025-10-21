@@ -1,10 +1,13 @@
-import Footer from "@/component/Layout/Footer";
-import Header from "@/component/Layout/Header";
+import Footer from "@/domain/Layout/Footer";
+import Header from "@/domain/Layout/Header";
 import { Outlet } from "react-router-dom";
+
+
 
 function Root() {
   return (
     <div>
+      
       <Header />
       <main>
         <Outlet />
