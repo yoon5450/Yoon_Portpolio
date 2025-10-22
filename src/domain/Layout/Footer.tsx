@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex items-center justify-between h-36 bg-gray-950 text-gray-200 font-[pretendard] px-20">
+    <footer className="flex items-center justify-between h-20 bg-gray-950 text-gray-200 font-[pretendard] px-20">
       <div className="flex flex-col gap-1.5">
         <p>
           <span className="text-orange-400">EMAIL</span> dbseodnd356@gmail.com

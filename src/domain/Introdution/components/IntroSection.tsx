@@ -1,6 +1,7 @@
 import avatar from "@/assets/yoon.jpg";
 import { useState } from "react";
 import IntroductionSummary from "./IntroductionSummary";
+import { motion } from "motion/react";
 
 const Introdution = [
   {
@@ -85,11 +86,12 @@ function IntroSection() {
           </div>
         </div>
       </div>
-      <div className="flex gap-8 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1">
+      <motion.ul className="flex gap-8 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1">
         {Introdution.map(({ title, desc }, index) => (
           <IntroductionSummary
             title={title}
             desc={desc}
+            delay={index * 0.25}
             onClick={() =>
               selectedSummary === index
                 ? setSelectedSummary(null)
@@ -97,7 +99,7 @@ function IntroSection() {
             }
           />
         ))}
-      </div>
+      </motion.ul>
     </div>
   );
 }

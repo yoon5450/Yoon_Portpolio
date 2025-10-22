@@ -8,6 +8,7 @@ interface Props {
   isOpen?: boolean;
   className?: string;
   onClick?: () => void;
+  delay?: number;
 }
 
 function IntroductionSummary({
@@ -16,12 +17,13 @@ function IntroductionSummary({
   className,
   isOpen = true,
   onClick,
+  delay,
 }: Props) {
   return (
     <motion.div
       className={tw("w-120", className)}
       initial={{ opacity: 0, translateX: -50 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
+      whileInView={{ opacity: 1, translateX: 0, transition: { delay } }}
     >
       <button
         type="button"
