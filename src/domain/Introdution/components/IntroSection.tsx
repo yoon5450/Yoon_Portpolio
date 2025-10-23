@@ -5,11 +5,11 @@ import { motion } from "motion/react";
 
 const Introdution = [
   {
-    title: "문제 정의부터 시작하는 개발자입니다.",
+    title: "문제를 정의하는 개발자입니다.",
     desc: "기술 선택 전에 문제를 명확히 정의하고, 팀원들과 함께 최적의 해결책을 찾는 사람입니다. Next .js 기반 인증 시스템 설계, 동시성 제어, 긴급 배포 이슈 대응 등 다양한 문제를 해결해왔습니다.",
   },
   {
-    title: "문화를 주도할 수 있는 개발자입니다.",
+    title: "문화를 주도하는 개발자입니다.",
     desc: "부트캠프 4개 프로젝트에서 팀장으로 코드 리뷰 문화, 살아있는 문서, 빠른 소통을 원칙으로 삼았으며 모든 프로젝트에서 순위권의 성적을 거두었습니다.",
   },
   {
@@ -86,7 +86,7 @@ function IntroSection() {
           </div>
         </div>
       </div>
-      <motion.ul className="flex gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
+      <motion.ul className="grid grid-cols-3 justify-center gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
         {Introdution.map(({ title, desc }, index) => (
           <IntroductionSummary
             title={title}

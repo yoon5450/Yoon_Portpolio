@@ -1,5 +1,8 @@
 import { create } from "zustand";
 
+type Variant = "default" | "transparent" | "light" | "primary";
+
+
 interface HeaderControllStore {
   variant: "default" | "transparent" | "light" | "primary";
   setVariant: (
@@ -9,5 +12,5 @@ interface HeaderControllStore {
 
 export const headerControllStore = create<HeaderControllStore>()((set) => ({
   variant: "transparent",
-  setVariant: (variant) => set({ variant }),
+  setVariant: (variant:Variant) => set({ variant }),
 }));

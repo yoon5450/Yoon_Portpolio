@@ -19,7 +19,6 @@ function Header({ variant = "transparent" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const params = useParams();
 
-
   // 스크롤 이벤트 처리
   useEffect(() => {
     // transparent 모드일 때만 스크롤 이벤트 추가
@@ -111,26 +110,30 @@ function Header({ variant = "transparent" }: HeaderProps) {
               YOON's PORTFOLIO
             </h1>
           </Link>
-          <div className={`hidden md:flex items-center gap-12 ${styles.text}`}>
-            <Link
-              to="/about"
-              className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+          {variant !== "default" && (
+            <div
+              className={`hidden md:flex items-center gap-12 ${styles.text}`}
             >
-              자기소개
-            </Link>
-            <Link
-              to="/skills"
-              className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
-            >
-              기술 스택
-            </Link>
-            <Link
-              to="/projects"
-              className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
-            >
-              프로젝트
-            </Link>
-          </div>
+              <Link
+                to="/about"
+                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              >
+                자기소개
+              </Link>
+              <Link
+                to="/skills"
+                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              >
+                기술 스택
+              </Link>
+              <Link
+                to="/projects"
+                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              >
+                프로젝트
+              </Link>
+            </div>
+          )}
         </div>
       </header>
 
