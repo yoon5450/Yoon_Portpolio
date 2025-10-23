@@ -7,15 +7,14 @@ import SkillsSection from "@/domain/Skills/components/SkillsSection";
 
 function Main() {
   return (
-    <>
+    <div className="relative">
       <HeroSection />
       <IntroSection />
       <PeerReviewSection />
       <SkillsSection />
       <hr className="text-gray-200 px-[8%]" />
-
       <ProjectSection />
-    </>
+    </div>
   );
 }
 export default Main;

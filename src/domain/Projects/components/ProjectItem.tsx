@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import type { ProjectType } from "../types";
 import SkillTag from "@/domain/Skills/components/SkillTag";
+import tw from "@/utils/tw";
 
 function ProjectItem({
   thumbnail,
@@ -29,11 +30,9 @@ function ProjectItem({
       transition={{ type: "spring", stiffness: 180, damping: 20 }}
     >
       <div className="flex gap-2 w-full h-full">
-        {/* 왼쪽 */}
         <motion.div
           className="w-full h-full p-4 flex flex-col justify-between"
           animate={{
-            // x: hovered ? (originX === 0 ? 20 : -20) : 0,
             opacity: hovered ? 0.9 : 1,
           }}
           transition={{ duration: 0.3 }}
@@ -42,6 +41,7 @@ function ProjectItem({
             src={thumbnail}
             alt="프로젝트 이미지"
             className="rounded-md object-cover mb-2"
+            loading="lazy"
           />
           <h3 className="text-2xl font-semibold">{title}</h3>
           <span>{desc}</span>
@@ -50,7 +50,6 @@ function ProjectItem({
         </motion.div>
 
         {/* 상세 정보 */}
-
         <motion.div
           className="absolute top-0 right-0 h-full flex flex-col p-4 bg-gray-100/80 border-gray-200 overflow-scroll inset-0 backdrop-blur-md"
           initial={{ opacity: 0, x: 50, width: 0 }}
@@ -64,6 +63,7 @@ function ProjectItem({
           {hovered && (
             <a href={`./project/${title}`} className="h-full">
               <motion.div
+                className="pb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hovered ? 1 : 0 }}
                 transition={{ delay: 0.35 }}
@@ -72,7 +72,22 @@ function ProjectItem({
                   <h3 className="text-xl font-semibold text-gray-700 pb-2">
                     {title}
                   </h3>
-                  <span className="text-sm text-gray-500">{deployStatus}</span>
+                  <div className="flex gap-2 items-center animate-pulse duration-50">
+                    <span
+                      className={tw(
+                        "text-sm text-amber-600",
+                        deployStatus === "배포 중" && "text-green-500"
+                      )}
+                    >
+                      {deployStatus}
+                    </span>
+                    <div
+                      className={tw(
+                        "h-3 w-3 rounded-full bg-amber-600",
+                        deployStatus === "배포 중" && "bg-green-500"
+                      )}
+                    />
+                  </div>
                 </div>
                 <hr className="text-gray-500 pb-2" />
                 <article className="flex flex-col gap-4 pb-4">
