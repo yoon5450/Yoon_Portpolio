@@ -11,7 +11,7 @@ const projects: ProjectType[] = [
     title: "Re:Life",
     desc: "AI 평행우주 시나리오 조회 플랫폼",
     period: "2025-09-15 ~ 2025-10-16 (4주) 진행",
-    teammate: "프론트엔드팀 3명-백엔드팀 5명",
+    teammate: "프론트엔드팀 3명-백엔드팀 5명 | 프론트팀 팀장",
     background:
       '인생의 중요한 선택에서 "만약 그때 다른 선택을 했다면?" 이라는 궁금증에서 출발한 프로젝트입니다. 사용자의 성향과 그 시점의 선택에 따라 평행우주 인생 시나리오를 시뮬레이션하는 서비스입니다.',
     skills: [
@@ -66,7 +66,7 @@ const projects: ProjectType[] = [
         desc: "Zustand 클라이언트 기반 관리의 로직 분산과 클라이언트 대량 미션 데이터의 클라이언트 메모리 문제 진단, RPC를 이용한 이벤트 관리 및 해시값을 이용한 확정적 미션 수령, 실시간 피드백 구현",
       },
     ],
-    teammate: "프론트팀 4명",
+    teammate: "프론트팀 4명 | 팀장",
     deployStatus: "배포 중",
     deployUrl: "https://pick-it-book.vercel.app/",
     youtubeUrl: "https://youtu.be/DApI3ST66kQ",
@@ -97,7 +97,7 @@ const projects: ProjectType[] = [
         desc: "MediaRecorder API로 음성 녹음, Blob 처리, 커스텀 오디오 플레이어 (재생/일시정지, 진행바)",
       },
     ],
-    teammate: "프론트팀 4명",
+    teammate: "프론트팀 4명 | 팀장",
     deployStatus: "배포 중",
     deployUrl: "https://music-mate-kappa.vercel.app/",
     youtubeUrl: "https://youtu.be/rBm-t0leH-o",

@@ -17,6 +17,8 @@ interface HeaderProps {
 function Header({ variant = "transparent" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const params = useParams();
+
 
   // 스크롤 이벤트 처리
   useEffect(() => {

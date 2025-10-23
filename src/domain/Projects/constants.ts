@@ -10,7 +10,7 @@ export const PROJECTS: ProjectDetail[] = [
     title: "Re:Life",
     desc: "AI 평행우주 시나리오 조회 플랫폼",
     period: "2025-09-15 ~ 2025-10-16 (4주) 진행",
-    teammate: "프론트엔드팀 3명-백엔드팀 5명",
+    teammate: "프론트엔드팀 3명-백엔드팀 5명(프론트팀 팀장)",
     background:
       '인생의 중요한 선택에서 "만약 그때 다른 선택을 했다면?" 이라는 궁금증에서 출발한 프로젝트입니다. 사용자의 성향과 그 시점의 선택에 따라 평행우주 인생 시나리오를 시뮬레이션하는 서비스입니다.',
     skills: [
@@ -31,6 +31,18 @@ export const PROJECTS: ProjectDetail[] = [
       {
         title: "Server Action 기반 인증 시스템 구현",
         desc: "민감 정보(로그인 / 회원가입) Server Action으로 처리, CookieStore 및 Axios InterCeptor로 CSRF 토큰 자동 주입, CSRF 공격 방어",
+      },
+      {
+        title: "Next.js App Router + Server Action 기반 인증 시스템 구현",
+        desc: "민감 정보( 로그인 / 회원가입 )은 Server Action으로 처리, Axios Interceptor로 CSRF 토큰 자동 주입, CSRF 공격 방어, Next.js Middleware를 이용한 인증 상태별 라우팅 제어 (public/protected)",
+      },
+      {
+        title: "Zod + React-Hook-Form 타입 안전 폼 시스템",
+        desc: "스키마 기반 런타임 유효성 검증 + TS 타입 추론으로 안정성 확보, setValue / control를 이용한 중첩 폼 상태 관리",
+      },
+      {
+        title: "SSR + Tanstack Query 캐시 전략",
+        desc: "dehydrate 패턴으로 서버/클라이언트 캐시 일관성 유지, 팀원 온보딩을 위해 가이드 문서 작성",
       },
     ],
     deployStatus: "백엔드 배포 중단",
@@ -73,7 +85,7 @@ export const PROJECTS: ProjectDetail[] = [
         desc: "보유 미션 기반 개인화된 상태 관리 구현과 캐시 관리를 통한 즉시성, 조회 효율성 관리, 낙관적 업데이트 적용",
       },
     ],
-    teammate: "프론트팀 4명",
+    teammate: "프론트팀 4명(팀장)",
     deployStatus: "배포 중",
     deployUrl: "https://pick-it-book.vercel.app/",
   },
@@ -95,15 +107,19 @@ export const PROJECTS: ProjectDetail[] = [
     ],
     charged: [
       {
+        title: "프로젝트 아키텍처 및 초기 구조 설계",
+        desc: "SPA 라우팅 구조 설계 및 빠른 구현으로 팀원 온보딩 지원, Supabase 스키마 설계 및 RLS 설정, 일정 지연이 발생했을 때 핵심 기능(실시간 채팅, 음악 공유)에 집중하도록 MVP 조정 결정",
+      },
+      {
         title: "실시간 채팅 시스템 구현",
-        desc: "Supabase Realtime 기반 메세지, 이미지, 음성 파일 전송, 스크롤 위치별 동작 최적화 (탐색 중 고정 / 최하단 자동 스크롤)",
+        desc: "Supabase Realtime 기반 메세지, 이미지, 음성 파일 전송, 스크롤 위치별 동작 최적화 (탐색 중 고정 / 최하단 자동 스크롤), IntersectionObserver 무한 스크롤",
       },
       {
         title: "음성 녹음 및 재생 기능",
-        desc: "MediaRecorder API로 음성 녹음, Blob 처리, 커스텀 오디오 플레이어 (재생/일시정지, 진행바)",
+        desc: "MediaRecorder API로 음성 녹음, Blob 처리, 커스텀 오디오 플레이어 (재생/일시정지, 진행바), Supabase Storage 업로드",
       },
     ],
-    teammate: "프론트팀 4명",
+    teammate: "프론트팀 4명(팀장)",
     deployStatus: "배포 중",
     deployUrl: "https://music-mate-kappa.vercel.app/",
   },
