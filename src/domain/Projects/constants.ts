@@ -1,4 +1,4 @@
-import relifeThumb from "@/assets/relifeThumb.png";
+import relifeThumb from "@/assets/relifethumb.png";
 import pickItBookThumb from "@/assets/pickitbookthumb.png";
 import musicMateThumb from "@/assets/musicmatethumb.png";
 import portpolioThumb from "@/assets/portpoliothumb.png";
