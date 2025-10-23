@@ -21,7 +21,7 @@ function IntroductionSummary({
 }: Props) {
   return (
     <motion.div
-      className={tw("w-105 flex flex-col", className)}
+      className={tw("w-100 flex flex-col", className)}
       initial={{ opacity: 0, translateX: -50 }}
       whileInView={{ opacity: 1, translateX: 0, transition: { delay } }}
     >
