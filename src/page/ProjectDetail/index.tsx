@@ -9,7 +9,7 @@ function ProjectDetail() {
   if (!project) return <div>프로젝트를 찾을 수 없습니다.</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-8 pt-18">
+    <div className="max-w-4xl mx-auto p-8 pt-15">
       <div className="mb-8">
         <img
           src={project.thumbnail}
@@ -20,7 +20,7 @@ function ProjectDetail() {
         <p className="text-xl text-gray-600 mb-2">{project.desc}</p>
         <div className="flex gap-4 text-sm text-gray-500">
           <span>{project.period}</span>
-          <span>|</span>
+          <div className="w-0.5 bg-gray-500" />
           <span>{project.teammate}</span>
         </div>
       </div>
@@ -29,6 +29,11 @@ function ProjectDetail() {
         <section>
           <h2 className="text-2xl font-semibold mb-2">프로젝트 개요</h2>
           <p className="text-gray-700 leading-relaxed">{project.background}</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">프로젝트 아키텍쳐</h2>
+          <img src={project.architecture} />
         </section>
 
         <section>

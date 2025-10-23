@@ -2,6 +2,9 @@ import relifeThumb from "@/assets/relifeThumb.png";
 import pickItBookThumb from "@/assets/pickitbookthumb.png";
 import musicMateThumb from "@/assets/musicmatethumb.png";
 import portpolioThumb from "@/assets/portpoliothumb.png";
+import musicMateArchitecture from "@/assets/musicMateArchitecture.png";
+import pickItBookArchitecture from "@/assets/pickItBookArchitecture.png";
+import relifeArchitecture from "@/assets/relifeArchitecture.png";
 import type { ProjectDetail } from "./types";
 
 export const PROJECTS: ProjectDetail[] = [
@@ -13,6 +16,7 @@ export const PROJECTS: ProjectDetail[] = [
     teammate: "프론트엔드팀 3명-백엔드팀 5명(프론트팀 팀장)",
     background:
       '인생의 중요한 선택에서 "만약 그때 다른 선택을 했다면?" 이라는 궁금증에서 출발한 프로젝트입니다. 사용자의 성향과 그 시점의 선택에 따라 평행우주 인생 시나리오를 시뮬레이션하는 서비스입니다.',
+    architecture: relifeArchitecture,
     skills: [
       "React",
       "Next.js",
@@ -30,7 +34,7 @@ export const PROJECTS: ProjectDetail[] = [
       },
       {
         title: "Server Action 기반 인증 시스템 구현",
-        desc: "민감 정보(로그인 / 회원가입) Server Action으로 처리, CookieStore 및 Axios InterCeptor로 CSRF 토큰 자동 주입, CSRF 공격 방어",
+        desc: "민감 정보(로그인 / 회원가입) Server Action으로 처리, CookieStore 및 Axios InterCeptor로 CSRF 토큰 자동 주입-CSRF 공격 방어",
       },
       {
         title: "Next.js App Router + Server Action 기반 인증 시스템 구현",
@@ -56,6 +60,7 @@ export const PROJECTS: ProjectDetail[] = [
     period: "2025-08-22 ~ 2025-09-08 (2.5주) 진행",
     background:
       "저조한 한국 연간 독서량 통계를 아이디어로 시작한 프로젝트입니다. 책을 선택하기 어려운 사람들에게 랜덤 룰렛으로 책을 쉽게 선택하도록 제시하고, 독서 챌린지로 독서 흥미를 높일 수 있도록 하는 서비스입니다.",
+    architecture: pickItBookArchitecture,
     skills: [
       "React",
       "React Router",
@@ -96,6 +101,7 @@ export const PROJECTS: ProjectDetail[] = [
     period: "2025-07-22 ~ 2025-08-06 (2주) 진행",
     background:
       "음악 관련 커뮤니티는 장르별로 파편화되어 있어 접근하기 어렵고, 게시판 형태의 오래된 디자인인 경우가 많아 시작한 프로젝트입니다. 실시간성을 강조하고, 즉시 파일을 공유할 수 있는 음악 SNS 서비스입니다.",
+    architecture: musicMateArchitecture,
     skills: [
       "React",
       "Vite",

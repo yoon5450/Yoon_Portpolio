@@ -75,7 +75,7 @@ function ProjectItem({
                   <span className="text-sm text-gray-500">{deployStatus}</span>
                 </div>
                 <hr className="text-gray-500 pb-2" />
-                <article className="flex flex-col gap-4">
+                <article className="flex flex-col gap-4 pb-4">
                   <div>
                     <p className="font-semibold">프로젝트 개요</p>
                     <p className="text-sm leading-5">{background}</p>

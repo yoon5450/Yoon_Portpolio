@@ -17,6 +17,7 @@ export interface ProjectDetail {
   title: string;
   desc: string;
   period: string;
+  architecture?: string;
   teammate: string;
   background?: string;
   skills?: string[];
