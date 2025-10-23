@@ -86,7 +86,7 @@ function IntroSection() {
           </div>
         </div>
       </div>
-      <motion.ul className="flex gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
+      <motion.ul className="flex justify-center gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
         {Introdution.map(({ title, desc }, index) => (
           <IntroductionSummary
             title={title}
