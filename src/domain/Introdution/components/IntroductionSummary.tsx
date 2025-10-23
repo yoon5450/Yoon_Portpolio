@@ -21,13 +21,13 @@ function IntroductionSummary({
 }: Props) {
   return (
     <motion.div
-      className={tw("w-120", className)}
+      className={tw("w-120 flex flex-col", className)}
       initial={{ opacity: 0, translateX: -50 }}
       whileInView={{ opacity: 1, translateX: 0, transition: { delay } }}
     >
       <button
         type="button"
-        className="flex items-center border-b border-white"
+        className="flex items-center justify-center border-b border-white"
         onClick={onClick}
       >
         <h3 className="text-white">{title}</h3>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import tw from "../../utils/tw";
+import tw from "@/utils/tw";
 
 interface HeaderProps {
   variant?: "default" | "transparent" | "light" | "primary";

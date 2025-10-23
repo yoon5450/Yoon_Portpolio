@@ -1,17 +1,8 @@
 import { AiFillYoutube, AiOutlineLink } from "react-icons/ai";
 import { useState } from "react";
 import { motion } from "motion/react";
-
-interface Props {
-  thumbnail: string;
-  title: string;
-  desc: string;
-  period?: string;
-  teammate?: string;
-  deployUrl?: string;
-  youtubeUrl?: string;
-  index?: number;
-}
+import type { ProjectType } from "../types";
+import SkillTag from "@/domain/Skills/components/SkillTag";
 
 function ProjectItem({
   thumbnail,
@@ -19,30 +10,30 @@ function ProjectItem({
   desc,
   period,
   teammate,
+  background,
+  skills,
+  charged,
+  deployStatus,
   deployUrl,
   youtubeUrl,
-  index,
-}: Props) {
+}: ProjectType) {
   const [hovered, setHovered] = useState(false);
-
-  const originX = (index || 0) % 2 ? 1 : 0;
 
   return (
     <motion.li
-      className="relative w-120 h-95 flex flex-col p-4 pb-6 gap-1 border border-gray-200 rounded-md bg-white"
+      className="relative flex flex-col p-2 gap-1 border border-gray-200 rounded-md bg-white overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ zIndex: hovered ? 10 : 1, originX }}
-      animate={{ width: hovered ? "150%" : "100%" }}
+      style={{ zIndex: hovered ? 10 : 1 }}
+      animate={{ scale: hovered ? 1.1 : 1 }}
       transition={{ type: "spring", stiffness: 180, damping: 20 }}
     >
-      {/* 내부 내용은 absolute로 두지 말고 flex 안에서 움직이게 */}
       <div className="flex gap-2 w-full h-full">
         {/* 왼쪽 */}
         <motion.div
           className="w-full h-full p-4 flex flex-col justify-between"
           animate={{
-            x: hovered ? (originX === 0 ? 20 : -20) : 0,
+            // x: hovered ? (originX === 0 ? 20 : -20) : 0,
             opacity: hovered ? 0.9 : 1,
           }}
           transition={{ duration: 0.3 }}
@@ -58,27 +49,79 @@ function ProjectItem({
           <span>{teammate}</span>
         </motion.div>
 
-        {/* 오른쪽 */}
+        {/* 상세 정보 */}
+
         <motion.div
-          className="w-1/2 h-full p-4 bg-white/90 border-l border-gray-200"
-          initial={{ opacity: 0, x: originX === 0 ? 50 : -50 }}
+          className="absolute top-0 right-0 h-full flex flex-col p-4 bg-gray-100/80 border-gray-200 overflow-scroll inset-0 backdrop-blur-md"
+          initial={{ opacity: 0, x: 50, width: 0 }}
           animate={{
             opacity: hovered ? 1 : 0,
-            x: hovered ? 0 : originX === 0 ? 50 : -50,
+            x: hovered ? 0 : 50,
+            width: hovered ? "100%" : 0,
           }}
           transition={{ duration: 0.35 }}
         >
-          <p className="text-sm text-gray-700">우후</p>
+          {hovered && (
+            <a href={`./project/${title}`} className="h-full">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: hovered ? 1 : 0 }}
+                transition={{ delay: 0.35 }}
+              >
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold text-gray-700 pb-2">
+                    {title}
+                  </h3>
+                  <span className="text-sm text-gray-500">{deployStatus}</span>
+                </div>
+                <hr className="text-gray-500 pb-2" />
+                <article className="flex flex-col gap-4">
+                  <div>
+                    <p className="font-semibold">프로젝트 개요</p>
+                    <p className="text-sm leading-5">{background}</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">기술 스택</p>
+                    <div className="flex gap-2 p-1 flex-wrap">
+                      {skills?.map((s) => (
+                        <SkillTag key={`project-${s}`} name={s} />
+                      ))}
+                    </div>
+                  </div>
+                  {charged && (
+                    <div>
+                      <p className="font-semibold">핵심 구현 내용</p>
+                      <ul className="flex flex-col gap-2">
+                        {charged.map(({ title, desc }) => (
+                          <li key={`charged-${title}`}>
+                            <p className="text-sm text-smleading-5">{title}</p>
+                            <p className="text-sm text-gray-500 pl-1">{desc}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </article>
+              </motion.div>
+            </a>
+          )}
         </motion.div>
       </div>
 
       {/* 링크 버튼 */}
-      <div className="absolute flex gap-6 right-4 bottom-4">
+      <motion.div
+        className="absolute flex gap-4 right-4 bottom-4 items-center"
+        animate={{ opacity: hovered ? 1 : 0 }}
+      >
         {deployUrl && (
           <button
             type="button"
-            className="cursor-pointer"
-            onClick={() => window.open(deployUrl, "newWindow")}
+            className="cursor-pointer flex gap-2 hover:text-gray-400 duration-100"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open(deployUrl, "newWindow");
+            }}
+            name="배포 링크로 이동"
           >
             <AiOutlineLink size={24} />
           </button>
@@ -86,13 +129,17 @@ function ProjectItem({
         {youtubeUrl && (
           <button
             type="button"
-            className="cursor-pointer"
-            onClick={() => window.open(youtubeUrl, "newWindow")}
+            className="cursor-pointer text-[#FE3C3C] hover:text-[#FE6E6E]"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open(youtubeUrl, "newWindow");
+            }}
+            name="영상 링크로 이동"
           >
-            <AiFillYoutube size={24} color="#FE3C3C" />
+            <AiFillYoutube size={28} />
           </button>
         )}
-      </div>
+      </motion.div>
     </motion.li>
   );
 }

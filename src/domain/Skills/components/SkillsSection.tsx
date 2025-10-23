@@ -7,7 +7,7 @@ function SkillsSection() {
       <h1 className="font-family-perm text-3xl font-normal">Skills</h1>
 
       <div className="flex flex-col gap-5 p-10">
-        <div className="flex grid-cols-1 md:grid-cols-2 w-fit">
+        <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
           <div className="flex gap-1 items-center w-40">
             {" "}
             <Code2 size={18} /> 언어
@@ -21,9 +21,10 @@ function SkillsSection() {
 
         <hr className="text-gray-200" />
 
-        <div className="flex grid-cols-1 md:grid-cols-2 w-fit">
+        <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
           <div className="flex gap-1 items-center w-40">
-            <MonitorSmartphone size={18} /> 프론트엔드
+            <MonitorSmartphone size={18} />{" "}
+            <span className="text-nowrap">프론트엔드 </span>
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -32,6 +33,7 @@ function SkillsSection() {
               "SCSS",
               "React",
               "Next.js",
+              "Tanstack Query",
               "react-hook-form",
               "React Router",
               "TailwindCSS",
@@ -47,7 +49,7 @@ function SkillsSection() {
 
         <hr className="text-gray-200" />
 
-        <div className="flex grid-cols-1 md:grid-cols-2 w-fit">
+        <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
           <div className="flex gap-1 items-center w-40">
             <Server size={18} /> 백엔드
           </div>
@@ -60,12 +62,12 @@ function SkillsSection() {
 
         <hr className="text-gray-200" />
 
-        <div className="flex grid-cols-1 md:grid-cols-2 w-fit">
+        <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
           <div className="flex gap-1 items-center w-40 ">
             <Cloud size={18} /> 환경
           </div>
           <div className="flex flex-wrap gap-2">
-            {["Vercel", "Git/GitHub", "Github Actions", "AWS(EC2)"].map((s) => (
+            {["Vercel", "Git/GitHub", "AWS(EC2)"].map((s) => (
               <SkillTag key={s} name={s} />
             ))}
           </div>
