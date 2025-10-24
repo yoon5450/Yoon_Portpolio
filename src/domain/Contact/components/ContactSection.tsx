@@ -34,13 +34,13 @@ function ContactSection() {
           />
         </div>
       </div>
-      <div className="flex items-center justify-center text-black text-l">
+      {/* <div className="flex items-center justify-center text-black text-l">
         <span className="text-amber-500">GitHub</span>: @yoon5450 |&nbsp;
         <span className="text-amber-500">EMAIL</span>: dbseodnd356@gmil.com
         |&nbsp;
         <span className="text-amber-500">tistory</span>:
         https://yun-engene.tistory.com/
-      </div>
+      </div> */}
     </div>
   );
 }
