@@ -42,7 +42,7 @@ function ContactButton({ iconName, text, hiddenText, href }: Props) {
         className="absolute flex items-center justify-center bg-white h-full px-4 rounded-md -ml-2"
         animate={{
           x: hovered ? 120 : 8,
-          backgroundColor: hovered ? "#F9FAFB" : "white"
+          backgroundColor: hovered ? "#F9FAFB" : "white",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
