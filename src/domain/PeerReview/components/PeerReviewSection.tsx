@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReviewOriginModal from "./ReviewOriginModal";
+import TextRoll from "./TextRoll";
 
 function PeerReviewSection() {
   const [isModalOpen, setIsModalOpen] = useState(() => false);
@@ -14,16 +15,8 @@ function PeerReviewSection() {
         Peer Review
       </h1>
 
-      <div className="py-10 flex flex-col justify-center items-center gap-8">
-        <div className="text-3xl text-subtext">"초기 구조를 잡아주는 사람"</div>
-        <div className="text-3xl text-subtext">
-          "방향을 책임질 수 있는 팀장"
-        </div>
-        <div className="text-3xl text-white">"소통이 적극적인 팀원"</div>
-        <div className="text-3xl text-subtext">"솔선수범하는 팀장"</div>
-        <div className="text-3xl text-subtext">
-          "왜 이런 구조인지 고민하게 하는 사람"
-        </div>
+      <div className="py-10">
+        <TextRoll />
       </div>
 
       <div className="flex justify-end">

@@ -48,10 +48,19 @@ export const PROJECTS: ProjectDetail[] = [
         title: "SSR + Tanstack Query 캐시 전략",
         desc: "dehydrate 패턴으로 서버/클라이언트 캐시 일관성 유지, 팀원 온보딩을 위해 가이드 문서 작성",
       },
+      {
+        title:"GSAP 애니메이션을 이용한 유저 온보딩 페이지 구현",
+        desc: "GSAP을 이용해 인터렉티브한 슬라이드형 온보딩 페이지를 구현, render 패턴을 이용해 확장이 용이한 형태로 설계"
+      },
+      {
+        title: "커뮤니티 페이지 구현",
+        desc: "검색, 게시글 조회, 좋아요, 댓글, 투표, 시나리오 공유, 글 수정-삭제 구현, RSC-RCC 구분된 query로 구현"
+      }
     ],
     deployStatus: "백엔드 배포 중단",
     deployUrl: "https://relife.kr",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
+    tistoryUrl:"",
   },
   {
     thumbnail: pickItBookThumb,
@@ -93,6 +102,8 @@ export const PROJECTS: ProjectDetail[] = [
     teammate: "프론트팀 4명(팀장)",
     deployStatus: "배포 중",
     deployUrl: "https://pick-it-book.vercel.app/",
+    youtubeUrl: "https://youtu.be/DApI3ST66kQ",
+    tistoryUrl:"https://yun-engene.tistory.com/103",
   },
   {
     thumbnail: musicMateThumb,
@@ -128,6 +139,8 @@ export const PROJECTS: ProjectDetail[] = [
     teammate: "프론트팀 4명(팀장)",
     deployStatus: "배포 중",
     deployUrl: "https://music-mate-kappa.vercel.app/",
+    youtubeUrl: "https://youtu.be/rBm-t0leH-o",
+    tistoryUrl:"https://yun-engene.tistory.com/86",
   },
   {
     thumbnail: portpolioThumb,
@@ -139,5 +152,6 @@ export const PROJECTS: ProjectDetail[] = [
     teammate: "개인 프로젝트",
     deployStatus: "배포 중",
     deployUrl: "https://www.yoondaewoong.shop/",
+    tistoryUrl:"",
   },
 ];

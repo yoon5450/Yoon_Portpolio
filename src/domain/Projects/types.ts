@@ -25,4 +25,5 @@ export interface ProjectDetail {
   deployStatus?: string;
   deployUrl?: string;
   youtubeUrl?: string;
+  tistoryUrl?: string;
 }

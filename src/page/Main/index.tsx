@@ -1,4 +1,5 @@
 // import AboutSection from "@/domain/About/components/AboutSection";
+import ContactSection from "@/domain/Contact/components/ContactSection";
 import HeroSection from "@/domain/Hero/components/HeroSection";
 import IntroSection from "@/domain/Introdution/components/IntroSection";
 import PeerReviewSection from "@/domain/PeerReview/components/PeerReviewSection";
@@ -14,6 +15,8 @@ function Main() {
       <SkillsSection />
       <hr className="text-gray-200 px-[8%]" />
       <ProjectSection />
+      <hr className="text-gray-200 px-[8%]" />
+      <ContactSection />
     </div>
   );
 }

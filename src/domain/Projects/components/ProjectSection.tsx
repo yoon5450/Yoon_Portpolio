@@ -37,6 +37,7 @@ const projects: ProjectType[] = [
     deployStatus: "백엔드 배포 중단",
     deployUrl: "https://relife.kr",
     youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
+
   },
   {
     thumbnail: pickItBookThumb,

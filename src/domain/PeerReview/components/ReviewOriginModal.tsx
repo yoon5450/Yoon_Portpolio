@@ -16,17 +16,17 @@ function ReviewOriginModal({ isOpen, onClose }: Props) {
           피어 리뷰 원본 자료
         </h2>
         <div className="flex flex-col gap-10 items-center">
-          <div className="w-[80%]">
+          <div className="w-[90%]">
             <span className="text-lg">PickItBook 프로젝트</span>
-            <img src={peerReview3} alt="피어 리뷰 3" />
+            <img className="w-[100%]" src={peerReview3} alt="피어 리뷰 3" />
           </div>
-          <div className="w-[80%]">
+          <div className="w-[90%]">
             <span className="text-lg">MusicMate 프로젝트</span>
-            <img src={peerReview2} alt="피어 리뷰 2" />
+            <img className="w-[100%]" src={peerReview2} alt="피어 리뷰 2" />
           </div>
-          <div className="w-[80%]">
+          <div className="w-[90%]">
             <span className="text-lg">D-WORK 프로젝트</span>
-            <img src={peerReview1} alt="피어 리뷰 1" />
+            <img className="w-[100%]" src={peerReview1} alt="피어 리뷰 1" />
           </div>
         </div>
       </div>

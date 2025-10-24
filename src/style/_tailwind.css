@@ -9,3 +9,18 @@
   document {
   }
 }
+
+@layer utilities {
+  @keyframes infinite-scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-infinite-scroll-vertical {
+    animation: infinite-scroll-vertical 15s linear infinite;
+  }
+}
