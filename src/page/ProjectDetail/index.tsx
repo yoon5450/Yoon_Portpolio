@@ -76,12 +76,12 @@ function ProjectDetail() {
                 배포 사이트
               </a>
             )}
-            {project.deployUrl && (
+            {project.tistoryUrl && (
               <a
                 href={project.tistoryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-600 duration-100"
+                className="px-4 py-2 bg-[#EB531F] text-white rounded hover:bg-gray-600 duration-100"
               >
                 블로그 회고
               </a>
