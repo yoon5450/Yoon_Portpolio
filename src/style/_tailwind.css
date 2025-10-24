@@ -21,6 +21,6 @@
   }
 
   .animate-infinite-scroll-vertical {
-    animation: infinite-scroll-vertical 15s linear infinite;
+    animation: infinite-scroll-vertical 25s linear infinite;
   }
 }
