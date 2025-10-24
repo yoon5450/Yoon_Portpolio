@@ -31,31 +31,37 @@ function ProjectDetail() {
           <p className="text-gray-700 leading-relaxed">{project.background}</p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">프로젝트 아키텍쳐</h2>
-          <img src={project.architecture} />
-        </section>
+        {project.architecture && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">프로젝트 아키텍쳐</h2>
+            <img src={project.architecture} />
+          </section>
+        )}
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">기술 스택</h2>
-          <div className="flex gap-2 flex-wrap">
-            {project.skills?.map((skill) => (
-              <SkillTag key={skill} name={skill} />
-            ))}
-          </div>
-        </section>
+        {project.skills && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">기술 스택</h2>
+            <div className="flex gap-2 flex-wrap">
+              {project.skills?.map((skill) => (
+                <SkillTag key={skill} name={skill} />
+              ))}
+            </div>
+          </section>
+        )}
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">담당 업무</h2>
-          <div className="space-y-4">
-            {project.charged?.map((item, index) => (
-              <div key={index} className="border-l-4 border-amber-400 pl-4">
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-gray-700">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {project.charged && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">담당 업무</h2>
+            <div className="space-y-4">
+              {project.charged?.map((item, index) => (
+                <div key={index} className="border-l-4 border-amber-400 pl-4">
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-gray-700">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">링크</h2>
@@ -72,7 +78,7 @@ function ProjectDetail() {
             )}
             {project.deployUrl && (
               <a
-                href={project.deployUrl}
+                href={project.tistoryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-600 duration-100"
