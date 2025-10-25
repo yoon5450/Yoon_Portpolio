@@ -13,10 +13,13 @@
 @layer utilities {
   @keyframes infinite-scroll-vertical {
     0% {
-      transform: translateY(0);
+      transform: translateY(20%);
+    }
+    50% {
+      transform: translateY(-45%);
     }
     100% {
-      transform: translateY(-50%);
+      transform: translateY(10%);
     }
   }
 
