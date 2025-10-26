@@ -24,6 +24,7 @@ function IntroductionSummary({
       className={tw("w-100 flex flex-col", className)}
       initial={{ opacity: 0, translateX: -50 }}
       whileInView={{ opacity: 1, translateX: 0, transition: { delay } }}
+      viewport={{ once: true }}
     >
       <button
         type="button"

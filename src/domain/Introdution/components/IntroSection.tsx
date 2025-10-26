@@ -37,10 +37,10 @@ function IntroSection() {
         {/* 2층 아이템 (이름)*/}
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
-            <div className="font-semibold font-family-pret text-3xl text-white w-fit border-b p-2">
+            <div className="font-semibold font-family-pret text-2xl text-white w-fit border-b p-2">
               윤대웅
             </div>
-            <div className="font-family-pret w-fit text-xl text-subtext">
+            <div className="font-family-pret w-fit text-l text-gray-100">
               “왜”를 먼저 생각하고 “어떻게”를 구현하는 프론트엔드 개발자
               윤대웅입니다.
             </div>
@@ -49,37 +49,37 @@ function IntroSection() {
           {/* 1층 아이템 */}
           <div className="flex gap-12 flex-wrap">
             <div className="flex flex-col gap-3 items-center">
-              <div className="font-semibold font-family-pret text-3xl text-white w-fit border-b p-2">
+              <div className="font-semibold font-family-pret text-2xl text-white w-fit border-b p-2">
                 생년월일
               </div>
-              <div className="font-family-pret w-fit text-xl text-subtext">
+              <div className="font-family-pret w-fit text-l text-gray-100">
                 1998. 05. 14
               </div>
             </div>
 
             <div className="flex flex-col gap-3 items-center">
-              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+              <div className="font-semibold font-family-pret text-2xl text-white w-full border-b py-2">
                 최종학력
               </div>
-              <div className="font-family-pret w-fit text-xl text-subtext">
+              <div className="font-family-pret w-fit text-l text-gray-100">
                 공주대학교 컴퓨터공학과
               </div>
             </div>
 
             <div className="flex flex-col gap-3 items-center">
-              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+              <div className="font-semibold font-family-pret text-2xl text-white w-full border-b py-2">
                 이메일
               </div>
-              <div className="font-family-pret w-fit text-xl text-subtext">
+              <div className="font-family-pret w-fit text-l text-gray-100">
                 dbseodnd356@gmail.com
               </div>
             </div>
 
             <div className="flex flex-col gap-3 items-center">
-              <div className="font-semibold font-family-pret text-3xl text-white w-full border-b py-2">
+              <div className="font-semibold font-family-pret text-2xl text-white w-full border-b py-2">
                 연락처
               </div>
-              <div className="font-family-pret w-fit text-xl text-subtext">
+              <div className="font-family-pret w-fit text-l text-gray-100">
                 010-5743-5450
               </div>
             </div>

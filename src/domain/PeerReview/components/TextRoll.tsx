@@ -1,3 +1,4 @@
+import tw from "@/utils/tw";
 import { reviews } from "../constants";
 import {
   motion,
@@ -13,6 +14,7 @@ function TextRoll() {
   const [distance, setDistance] = useState(0); // px to translate for one full loop
   const [playing, setPlaying] = useState(true);
   const [startFrom, setStartFrom] = useState<number | null>(null);
+  const [fading, setFading] = useState(false);
 
   const items = [...reviews, ...reviews];
 
@@ -57,7 +59,7 @@ function TextRoll() {
     const duration = Math.max(1, remaining / SPEED);
     animateProp.y = [from, -distance];
     transitionProp.duration = duration;
-    transitionProp.easing = "linear";
+    transitionProp.ease = "linear";
     transitionProp.repeat = 0;
   } else {
     const cur = getCurrentY(listRef.current);
@@ -73,9 +75,12 @@ function TextRoll() {
       >
         <motion.div
           ref={listRef}
-          className="flex flex-col cursor-grab"
+          className={tw(
+            "flex flex-col cursor-grab transition-opacity duration-500 ease-in-out",
+            fading ? "opacity-0" : "opacity-100"
+          )}
           drag="y"
-          dragElastic={0.4}
+          dragElastic={0.1}
           dragConstraints={{ top: -distance, bottom: 0 }}
           onDragStart={() => {
             if (delayRef.current) {
@@ -119,7 +124,16 @@ function TextRoll() {
             }, 300);
           }}
           onAnimationComplete={() => {
-            if (playing) setStartFrom(0);
+            console.log("animation complete");
+            if (!listRef.current) return;
+            const cur = getCurrentY(listRef.current);
+            if (Math.abs(cur + distance) < 0.95 && playing) {
+              setFading(true);
+              setTimeout(() => {
+                setStartFrom(0);
+                setFading(false);
+              }, 800);
+            }
           }}
           whileTap={{ cursor: "grabbing" }}
           animate={animateProp as TargetAndTransition}
@@ -128,7 +142,7 @@ function TextRoll() {
           {items.map((review, index) => (
             <div
               key={`r-${index}`}
-              className="text-3xl text-white text-center py-6"
+              className="text-3xl text-white text-center py-6 first:pt-0 last:pb-0"
             >
               {review}
             </div>
