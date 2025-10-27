@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import type { ProjectType } from "../types";
 import SkillTag from "@/domain/Skills/components/SkillTag";
 import tw from "@/utils/tw";
+import { Tooltip } from "@/share/components/ToolTip";
 
 function ProjectItem({
   thumbnail,
@@ -125,34 +126,44 @@ function ProjectItem({
 
       {/* 링크 버튼 */}
       <motion.div
-        className="absolute flex gap-4 right-4 bottom-4 items-center"
+        className="absolute flex gap-4 right-4 bottom-4 items-center justify-center"
         animate={{ opacity: hovered ? 1 : 0 }}
       >
         {deployUrl && (
-          <button
-            type="button"
-            className="cursor-pointer flex gap-2 hover:text-gray-400 duration-100"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(deployUrl, "newWindow");
-            }}
-            name="배포 링크로 이동"
+          <Tooltip
+            contents="배포 링크로 이동"
+            className="bg-gray-900/80 text-white max-w-40 p-2 z-20 rounded-md"
           >
-            <AiOutlineLink size={24} />
-          </button>
+            <button
+              type="button"
+              className="cursor-pointer flex gap-2 hover:text-gray-400 duration-100"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(deployUrl, "newWindow");
+              }}
+              name="배포 링크로 이동"
+            >
+              <AiOutlineLink size={24} />
+            </button>
+          </Tooltip>
         )}
         {youtubeUrl && (
-          <button
-            type="button"
-            className="cursor-pointer text-[#FE3C3C] hover:text-[#FE6E6E]"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(youtubeUrl, "newWindow");
-            }}
-            name="영상 링크로 이동"
+          <Tooltip
+            contents="영상 링크로 이동"
+            className="bg-gray-900/80 text-white max-w-40 p-2 z-20 rounded-md"
           >
-            <AiFillYoutube size={28} />
-          </button>
+            <button
+              type="button"
+              className="cursor-pointer text-[#FE3C3C] hover:text-[#FE6E6E]"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(youtubeUrl, "newWindow");
+              }}
+              name="영상 링크로 이동"
+            >
+              <AiFillYoutube size={24} />
+            </button>
+          </Tooltip>
         )}
       </motion.div>
     </motion.li>

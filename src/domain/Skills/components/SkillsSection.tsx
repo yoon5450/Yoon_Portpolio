@@ -8,8 +8,7 @@ function SkillsSection() {
 
       <div className="flex flex-col gap-5 p-10">
         <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
-          <div className="flex gap-1 items-center w-40">
-            {" "}
+          <div className="flex gap-1 items-center min-w-40">
             <Code2 size={18} /> 언어
           </div>
           <div className="flex flex-wrap gap-2">
@@ -22,7 +21,7 @@ function SkillsSection() {
         <hr className="text-gray-200" />
 
         <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
-          <div className="flex gap-1 items-center w-40">
+          <div className="flex gap-1 items-center min-w-40">
             <MonitorSmartphone size={18} />{" "}
             <span className="text-nowrap">프론트엔드 </span>
           </div>
@@ -50,7 +49,7 @@ function SkillsSection() {
         <hr className="text-gray-200" />
 
         <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
-          <div className="flex gap-1 items-center w-40">
+          <div className="flex gap-1 items-center min-w-40">
             <Server size={18} /> 백엔드
           </div>
           <div className="flex flex-wrap gap-2">
@@ -63,7 +62,7 @@ function SkillsSection() {
         <hr className="text-gray-200" />
 
         <div className="flex grid-cols-1 md:grid-cols-2 w-fit gap-2">
-          <div className="flex gap-1 items-center w-40 ">
+          <div className="flex gap-1 items-center min-w-40 ">
             <Cloud size={18} /> 환경
           </div>
           <div className="flex flex-wrap gap-2">

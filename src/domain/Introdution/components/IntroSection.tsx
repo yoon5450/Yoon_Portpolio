@@ -22,7 +22,7 @@ function IntroSection() {
   const [selectedSummary, setSelectedSummary] = useState<number | null>(null);
 
   return (
-    <div className="relative py-20 bg-primary-background w-full flex flex-col px-[8%]">
+    <div className="relative py-20 bg-primary-background w-full flex flex-col px-[8%] md:px-10">
       {/* 제목 영역 */}
       <h1 className="font-family-perm text-3xl text-white font-normal">
         About Me
@@ -86,7 +86,7 @@ function IntroSection() {
           </div>
         </div>
       </div>
-      <motion.ul className="grid grid-cols-3 justify-center gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
+      <motion.ul className="grid grid-cols-1 lg:grid-cols-3 justify-items-center items-center gap-20 font-[pretendard] text-xl md:text-2xl leading-relaxed flex-1 flex-wrap">
         {Introdution.map(({ title, desc }, index) => (
           <IntroductionSummary
             title={title}
