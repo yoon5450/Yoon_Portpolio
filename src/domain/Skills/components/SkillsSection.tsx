@@ -3,7 +3,10 @@ import SkillTag from "./SkillTag";
 
 function SkillsSection() {
   return (
-    <div className="flex flex-col px-[8vw] py-10 w-auto bg-gray-50 gap-5">
+    <div
+      className="flex flex-col px-[8vw] py-10 w-auto bg-gray-50 gap-5"
+      id="skills"
+    >
       <h1 className="font-family-perm text-3xl font-normal">Skills</h1>
 
       <div className="flex flex-col gap-5 p-10">

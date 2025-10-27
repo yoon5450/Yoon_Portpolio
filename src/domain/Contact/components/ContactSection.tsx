@@ -2,7 +2,7 @@ import ContactButton from "./ContactButton";
 
 function ContactSection() {
   return (
-    <div className="p-10 md:p-20">
+    <div className="p-10 md:p-20" id="contact">
       <h1 className="font-family-perm text-3xl font-normal">Contact Me</h1>
 
       <div className="flex gap-8 p-10 items-center flex-wrap">
@@ -35,7 +35,7 @@ function ContactSection() {
             iconName="tistory"
             text="TISTORY"
             hiddenText="블로그 보기"
-            href="https://yun-engene.tistory.com/manage"
+            href="https://yun-engene.tistory.com/"
           />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import tw from "@/utils/tw";
+import { headerControllStore } from "../stores/headerControllStore";
 
 interface HeaderProps {
   variant?: "default" | "transparent" | "light" | "primary";
@@ -17,7 +18,26 @@ interface HeaderProps {
 function Header({ variant = "transparent" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const focusedItem = headerControllStore((state) => state.focusedItem);
+  const setIsScrolling = headerControllStore((state) => state.setIsScrolled);
   // const params = useParams();
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    setIsScrolling(true);
+
+    const headerHeight = 60; // 실제 header 높이(px)
+    const rectTop = el.getBoundingClientRect().top + window.pageYOffset;
+    const target = Math.max(0, rectTop - headerHeight);
+
+    window.scrollTo({ top: target, behavior: "smooth" });
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 800);
+  };
 
   // 스크롤 이벤트 처리
   useEffect(() => {
@@ -114,24 +134,42 @@ function Header({ variant = "transparent" }: HeaderProps) {
             <div
               className={`hidden md:flex items-center gap-12 ${styles.text}`}
             >
-              <Link
-                to="/about"
-                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              <button
+                disabled={focusedItem === "about"}
+                className={`text-md group cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full ${focusedItem === "about" ? "after:w-full" : ""}`}
+                onClick={() => scrollToSection("about")}
               >
                 자기소개
-              </Link>
-              <Link
-                to="/skills"
-                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              </button>
+              <button
+                disabled={focusedItem === "peerReview"}
+                className={`text-md group cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full ${focusedItem === "peerReview" ? "after:w-full" : ""}`}
+                onClick={() => scrollToSection("peerReview")}
+              >
+                피어리뷰
+              </button>
+              <button
+                disabled={focusedItem === "skills"}
+                className={`text-md group cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full ${focusedItem === "skills" ? "after:w-full" : ""}`}
+                onClick={() => scrollToSection("skills")}
               >
                 기술 스택
-              </Link>
-              <Link
-                to="/projects"
-                className={`text-md group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full`}
+              </button>
+              <button
+                disabled={focusedItem === "projects"}
+                className={`text-md group cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full ${focusedItem === "projects" ? "after:w-full" : ""}`}
+                onClick={() => scrollToSection("projects")}
               >
                 프로젝트
-              </Link>
+              </button>
+
+              <button
+                disabled={focusedItem === "contact"}
+                className={`text-md cursor-pointer group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${styles.underlineColor} after:transition-all after:duration-300 hover:after:w-full ${focusedItem === "contact" ? "after:w-full" : ""}`}
+                onClick={() => scrollToSection("contact")}
+              >
+                연락처
+              </button>
             </div>
           )}
         </div>

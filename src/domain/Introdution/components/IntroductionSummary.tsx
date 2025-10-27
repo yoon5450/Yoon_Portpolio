@@ -31,7 +31,7 @@ function IntroductionSummary({
         className="flex items-center justify-center border-b border-white"
         onClick={onClick}
       >
-        <h3 className="text-white">{title}</h3>
+        <h3 className="text-white text-nowrap">{title}</h3>
         {/* <MdArrowDropDown size={24} color="white" /> */}
       </button>
 

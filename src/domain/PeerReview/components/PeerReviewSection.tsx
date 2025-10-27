@@ -10,7 +10,10 @@ function PeerReviewSection() {
   };
 
   return (
-    <div className="relative py-20 bg-primary-background w-full flex flex-col px-[8%]">
+    <div
+      className="relative py-20 bg-primary-background w-full flex flex-col px-[8%]"
+      id="peerReview"
+    >
       <h1 className="font-family-perm text-3xl text-white font-normal">
         Peer Review
       </h1>
