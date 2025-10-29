@@ -17,10 +17,12 @@ export interface ProjectDetail {
   title: string;
   desc: string;
   period: string;
+  teamFlag?: string[];
   architecture?: string;
   teammate: string;
   background?: string;
   skills?: string[];
+  skillReason?: Record<string, string>[];
   charged?: { title: string; desc: string }[];
   deployStatus?: string;
   deployUrl?: string;
