@@ -22,8 +22,9 @@ function PeerReviewSection() {
         <div className="py-20 w-fit">
           <TextRoll />
         </div>
-
-        {/* <div className="flex justify-end">
+      </div>
+      
+      <div className="flex justify-end">
         <button
           className="text-white bg-inherit py-2 px-4 cursor-pointer border border-white rounded-md"
           type="button"
@@ -31,7 +32,6 @@ function PeerReviewSection() {
         >
           피어리뷰 원본 내용 보기
         </button>
-      </div> */}
       </div>
 
       <ReviewOriginModal isOpen={isModalOpen} onClose={onClose} />

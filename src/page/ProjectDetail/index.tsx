@@ -1,7 +1,12 @@
+import TroubleShootingItem from "@/domain/Projects/components/TroubleShootingSection";
 import { PROJECTS } from "@/domain/Projects/constants";
 import SkillTag from "@/domain/Skills/components/SkillTag";
 import { skillIcons } from "@/domain/Skills/constants";
+import { Tooltip } from "@/share/components/ToolTip";
+import { getYouTubeEmbedUrl } from "@/utils/getYouTubeEmbedUrl";
+import tw from "@/utils/tw";
 import { useState } from "react";
+import { AiOutlineLink } from "react-icons/ai";
 import { useParams } from "react-router";
 
 function ProjectDetail() {
@@ -20,7 +25,40 @@ function ProjectDetail() {
           alt={project.title}
           className="w-full h-64 object-cover rounded-b-md mb-4"
         />
-        <h1 className="text-4xl font-bold">{project.title}</h1>
+        <h1 className="text-4xl font-bold flex items-center gap-2 justify-between">
+          {project.title}
+          <div className="flex gap-2 items-center">
+            <span
+              className={tw(
+                "text-sm text-gray-500",
+                project.deployStatus === "배포 중"
+                  ? "text-green-400"
+                  : "text-red-400"
+              )}
+            >
+              {project.deployStatus}
+            </span>
+
+            {project.deployUrl && (
+              <Tooltip
+                contents="배포 링크로 이동"
+                className="bg-gray-900/80 text-white max-w-40 p-2 z-20 rounded-md"
+              >
+                <button
+                  type="button"
+                  className="cursor-pointer flex gap-2 hover:text-gray-400 duration-100"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(project.deployUrl, "newWindow");
+                  }}
+                  name="배포 링크로 이동"
+                >
+                  <AiOutlineLink size={24} />
+                </button>
+              </Tooltip>
+            )}
+          </div>
+        </h1>
         <p className="text-xl text-gray-600 mb-2">{project.desc}</p>
         <div className="flex gap-4 text-sm text-gray-500">
           <span>{project.period}</span>
@@ -35,6 +73,22 @@ function ProjectDetail() {
           <p className="text-gray-700 leading-relaxed">{project.background}</p>
         </section>
 
+        {project.youtubeUrl && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">시연 영상</h2>
+            <iframe
+              width="100%"
+              height="400"
+              src={getYouTubeEmbedUrl(project.youtubeUrl)}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </section>
+        )}
+
         {project.architecture && (
           <section>
             <h2 className="text-2xl font-semibold mb-2">프로젝트 아키텍쳐</h2>
@@ -45,9 +99,14 @@ function ProjectDetail() {
         {project.teamFlag && (
           <section>
             <h2 className="text-2xl font-semibold mb-2">팀 규칙</h2>
-            <ul className="list-inside flex flex-col gap-2 list-decimal">
+            <ul className="list-inside flex flex-col gap-2">
               {project.teamFlag.map((flag) => (
-                <li key={flag} className="text-l py-1 border-b border-amber-400 w-fit">{flag}</li>
+                <li
+                  key={flag}
+                  className="text-lg text-gray-700 p-1 border-b border-amber-400 w-fit"
+                >
+                  {flag}
+                </li>
               ))}
             </ul>
           </section>
@@ -72,7 +131,7 @@ function ProjectDetail() {
               </button>
             )}
             {showSkillReason && (
-              <div className="flex flex-col gap-4 border border-t-0 p-2">
+              <div className="flex flex-col gap-4 border border-t-0 p-2 border-gray-500 rounded-b-md">
                 {project.skillReason?.map((item, index) => (
                   <div key={index} className="flex flex-col gap-2 ">
                     <div className="flex items-center gap-2">
@@ -99,6 +158,38 @@ function ProjectDetail() {
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {project.achievements && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">핵심 성과</h2>
+            <ul className="list-inside flex flex-col gap-2 list-decimal">
+              {project.achievements.map((achievement) => (
+                <li
+                  key={achievement}
+                  className="text-l p-2 border-b min-h-12 leading-6 border-amber-400"
+                >
+                  {achievement}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {project.troubleShootings && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">문제 해결</h2>
+            <ul className="list-inside flex flex-col gap-2 list-decimal">
+              {project.troubleShootings.map((troubleShooting) => (
+                <TroubleShootingItem
+                  key={troubleShooting.title}
+                  title={troubleShooting.title}
+                  desc={troubleShooting.desc}
+                  markdownContent={troubleShooting.markdownContent || ""}
+                />
+              ))}
+            </ul>
           </section>
         )}
 
