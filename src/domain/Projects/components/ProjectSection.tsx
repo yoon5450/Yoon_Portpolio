@@ -117,9 +117,12 @@ const projects: ProjectType[] = [
 
 function ProjectSection() {
   return (
-    <div className="relative py-20 bg-gray-50 w-full flex flex-col px-[8%]" id="projects">
+    <div
+      className="relative py-20 bg-gray-50 w-full flex flex-col px-[8%]"
+      id="projects"
+    >
       <h1 className="font-family-perm text-3xl font-normal">Projects</h1>
-      <ul className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10 place-items-center md:gap-x-40 md:gap-y-10">
+      <ul className="p-2 py-4 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10 place-items-center md:gap-x-40 md:gap-y-10">
         {projects.map(
           ({
             thumbnail,

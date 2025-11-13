@@ -1,21 +1,26 @@
 import { skillIcons } from "@/domain/Skills/constants";
 import { useState } from "react";
 import { motion } from "motion/react";
+import tw from "@/utils/tw";
 
 interface Props {
   iconName: string;
   text: string;
   hiddenText?: string;
   href?: string;
+  className?: string;
 }
 
-function ContactButton({ iconName, text, hiddenText, href }: Props) {
+function ContactButton({ iconName, text, hiddenText, href, className }: Props) {
   const [hovered, setHovered] = useState(false);
   const lowerIconName = iconName.toLowerCase();
 
   return (
     <motion.a
-      className="relative flex items-center bg-primary-background text-white rounded-md border-2 border-primary-background h-16 overflow-hidden"
+      className={tw(
+        "relative flex items-center bg-primary-background text-white rounded-md border-2 border-primary-background h-16 overflow-hidden",
+        className
+      )}
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

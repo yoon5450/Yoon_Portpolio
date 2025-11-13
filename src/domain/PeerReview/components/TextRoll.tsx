@@ -132,6 +132,7 @@ function TextRoll() {
               setTimeout(() => {
                 setStartFrom(0);
                 setFading(false);
+                setPlaying(true);
               }, 800);
             }
           }}
