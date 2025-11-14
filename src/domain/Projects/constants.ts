@@ -244,6 +244,39 @@ export const PROJECTS: ProjectDetail[] = [
       "Supabase Realtime",
       "Vercel",
     ],
+    skillReason: [
+      {
+        skill: "React",
+        reason:
+          "상태 기반 관리인 React가 팀 프로젝트에서 강력하다고 생각했기 때문에 선택했다.",
+      },
+      {
+        skill: "Vite",
+        reason: "빠른 개발 환경과 HMR을 통한 개발 생산성 향상을 위해 선택했다.",
+      },
+      {
+        skill: "CSS",
+        reason: "Vite와 이어진 모듈 CSS 사용을 이용해 스타일링하기로 선택했다.",
+      },
+      {
+        skill: "MediaRecorder API",
+        reason: "음성 녹음 기능을 구현하기 위해 선택했다.",
+      },
+      {
+        skill: "Supabase",
+        reason:
+          "대시보드를 이용해 상대적으로 쉽게 사용할 수 있고, 실시간 기능과 RPC를 통한 복잡한 미션 트리거 로직 구현이 필요해 백엔드 서버로 선택했다.",
+      },
+      {
+        skill: "Supabase Realtime",
+        reason:
+          "Stomp.js를 이용해 직접 백엔드 코드와 함께 구현하기보다 Supabase에서 제공하는 기능을 통해 쉽게 실시간 채팅 기능을 구현하기 위해 선택했다.",
+      },
+      {
+        skill: "Vercel",
+        reason: "간편한 배포를 위해 선택했다.",
+      },
+    ],
     charged: [
       {
         title: "프로젝트 아키텍처 및 팀 리드",
@@ -279,7 +312,7 @@ export const PROJECTS: ProjectDetail[] = [
     thumbnail: portpolioThumb,
     title: "Portpolio",
     desc: "포트폴리오 사이트",
-    period: "2025-10-20 ~ 진행중",
+    period: "2025-10-20 ~ 2025-10-30",
     background: "개인 포트폴리오 웹페이지를 만들고 싶어 제작하게 되었습니다.",
     skills: ["React", "Vite", "TailwindCSS", "Framer Motion", "Vercel"],
     teammate: "개인 프로젝트",

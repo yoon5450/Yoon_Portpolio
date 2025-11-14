@@ -65,3 +65,7 @@ coverage/
 
 # Prettier, ESLint cache
 .prettiercache
+
+# JavaScript Test Results
+javascript-test-results.md
+*-test-results.md
