@@ -113,7 +113,7 @@ export const PROJECTS: ProjectDetail[] = [
       "커뮤니티 페이지 메타데이터 설정으로 SEO 평가 점수 60점에서 100점으로 상승",
       "커뮤니티 페이지 캐싱 적용으로 요청수 40%이상 감소",
     ],
-    deployStatus: "백엔드 배포 불안정",
+    deployStatus: "백엔드 배포 중단",
     deployUrl: "https://relife.kr",
     youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
     tistoryUrl: "https://yun-engene.tistory.com/106",

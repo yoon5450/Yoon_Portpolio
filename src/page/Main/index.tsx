@@ -73,7 +73,7 @@ function Main() {
   }, [setFocusedItem, isScrolling]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <HeroSection />
       <IntroSection />
       <PeerReviewSection />

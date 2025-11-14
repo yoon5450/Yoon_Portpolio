@@ -142,7 +142,7 @@ function HeroSection() {
         }}
       ></div>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center flex-col gap-2">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center flex-col gap-2 p-10 md:p-0">
         <span className="text-7xl text-white font-semibold px-8 py-4 border-b border-white mb-4">
           Yoon Portpolio
         </span>
