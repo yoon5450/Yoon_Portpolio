@@ -1,10 +1,18 @@
 import { Code2, MonitorSmartphone, Server, Cloud } from "lucide-react";
 import SkillTag from "./SkillTag";
+import SkillDetail from "./SkillDetail";
+import { useState } from "react";
 
 function SkillsSection() {
+  const [skillDetailVisible, setSkillDetailVisible] = useState(false);
+
+  const handleSkillDetailVisible = () => {
+    setSkillDetailVisible(!skillDetailVisible);
+  };
+
   return (
     <div
-      className="flex flex-col px-[8vw] py-10 w-auto bg-gray-50 gap-5"
+      className="flex flex-col px-[8vw] py-10 w-auto bg-gray-50 gap-5 relative"
       id="skills"
     >
       <h1 className="font-family-perm text-3xl font-normal">Skills</h1>
@@ -74,6 +82,22 @@ function SkillsSection() {
             ))}
           </div>
         </div>
+      </div>
+      {skillDetailVisible && (
+        <SkillDetail
+          visible={skillDetailVisible}
+          setVisible={setSkillDetailVisible}
+          className="w-full absolute top-0 left-0 h-full"
+        />
+      )}
+      <div className="flex justify-end">
+      <button
+        type="button"
+        onClick={handleSkillDetailVisible}
+        className="w-fit text-primary-background bg-inherit py-2 px-4 cursor-pointer border border-primary-background rounded-md"
+      >
+          {skillDetailVisible ? "기술 세부 정보 닫기" : "기술 세부 정보 보기"}
+        </button>
       </div>
     </div>
   );

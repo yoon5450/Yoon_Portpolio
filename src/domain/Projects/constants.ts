@@ -315,6 +315,31 @@ export const PROJECTS: ProjectDetail[] = [
     period: "2025-10-20 ~ 2025-10-30",
     background: "개인 포트폴리오 웹페이지를 만들고 싶어 제작하게 되었습니다.",
     skills: ["React", "Vite", "TailwindCSS", "Framer Motion", "Vercel"],
+    skillReason: [
+      {
+        skill: "React",
+        reason:
+          "도메인 기반 구조에 익숙해졌고, 초기 기획부터 constants를 이용한 정적인 구조로 만드려고 계획했기 때문에 React를 선택했다.",
+      },
+      {
+        skill: "Vite",
+        reason: "빠른 개발 환경과 HMR을 통한 개발 생산성 향상을 위해 선택했다.",
+      },
+      {
+        skill: "TailwindCSS",
+        reason:
+          "CSS 프레임워크로 빠른 스타일링과 일관된 디자인 시스템 구축을 위해 선택했다.",
+      },
+      {
+        skill: "Framer Motion",
+        reason:
+          "이전까지는 GSAP을 사용해왔었는데, 상태 기반으로 관리하는 애니메이션 효과가 더 쉽고 일관성 있다고 판단해 선택했다.",
+      },
+      {
+        skill: "Vercel",
+        reason: "간편한 배포를 위해 선택했다.",
+      },
+    ],
     teammate: "개인 프로젝트",
     deployStatus: "배포 중",
     deployUrl: "https://www.yoondaewoong.shop/",
