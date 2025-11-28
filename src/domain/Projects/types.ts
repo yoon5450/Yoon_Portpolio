@@ -25,7 +25,13 @@ export interface ProjectDetail {
   skillReason?: Record<string, string>[];
   charged?: { title: string; desc: string }[];
   achievements?: string[];
-  troubleShootings?: { title: string; desc: string; markdownContent?: string }[];
+  troubleShootings?: {
+    title: string;
+    thumnail: string;
+    background: string;
+    solution: string;
+    result: string;
+  }[];
   deployStatus?: string;
   deployUrl?: string;
   youtubeUrl?: string;

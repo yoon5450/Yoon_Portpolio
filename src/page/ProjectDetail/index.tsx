@@ -1,4 +1,4 @@
-import TroubleShootingItem from "@/domain/Projects/components/TroubleShootingSection";
+import TroubleShootingItem from "@/domain/Projects/components/TroubleShootingItem";
 import { PROJECTS } from "@/domain/Projects/constants";
 import SkillTag from "@/domain/Skills/components/SkillTag";
 import { skillIcons } from "@/domain/Skills/constants";
@@ -185,8 +185,10 @@ function ProjectDetail() {
                 <TroubleShootingItem
                   key={troubleShooting.title}
                   title={troubleShooting.title}
-                  desc={troubleShooting.desc}
-                  markdownContent={troubleShooting.markdownContent || ""}
+                  background={troubleShooting.background}
+                  solution={troubleShooting.solution}
+                  result={troubleShooting.result}
+                  thumnail={troubleShooting.thumnail}
                 />
               ))}
             </ul>

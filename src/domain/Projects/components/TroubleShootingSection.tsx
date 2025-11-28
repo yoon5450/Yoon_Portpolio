@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 
-function TroubleShootingItem({
+function TroubleShootingSection({
   title,
   desc,
   markdownContent,
@@ -78,4 +78,4 @@ function TroubleShootingItem({
   );
 }
 
-export default TroubleShootingItem;
+export default TroubleShootingSection;

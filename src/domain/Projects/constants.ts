@@ -5,6 +5,10 @@ import portpolioThumb from "@/assets/portpoliothumb.png";
 import musicMateArchitecture from "@/assets/musicMateArchitecture.png";
 import pickItBookArchitecture from "@/assets/pickItBookArchitecture.png";
 import relifeArchitecture from "@/assets/relifeArchitecture.png";
+import relifeTrouble1 from "@/assets/relifeTrouble1.png";
+import relifeTrouble2 from "@/assets/relifeTrouble2.png";
+import pickItBookTrouble1 from "@/assets/pickItBookTrouble1.png";
+import pickItBookTrouble2 from "@/assets/pickItBookTrouble2.png";
 import type { ProjectDetail } from "./types";
 
 export const PROJECTS: ProjectDetail[] = [
@@ -113,6 +117,28 @@ export const PROJECTS: ProjectDetail[] = [
       "커뮤니티 페이지 메타데이터 설정으로 SEO 평가 점수 60점에서 100점으로 상승",
       "커뮤니티 페이지 캐싱 적용으로 요청수 40%이상 감소",
     ],
+    troubleShootings: [
+      {
+        title: "SSR + CSR 캐싱 문제",
+        background:
+          "서버에서는 Next의 fetch, 클라이언트에서는 Axios + Tanstack Query를 사용했다. 때문에 상황에 따른 쿼리키 무효화 방식이 다를 수밖에 없었다. 이로 인해 캐시 관리의 복잡도가 증가하고 의도치 않은 path의 캐시 무효화가 발생했다.",
+        solution:
+          "조회 Query를 사용하는 모든 컴포넌트를 CSR 방식을 이용하는 것은 Next를 사용하는 장점을 죽인다고 생각해 서버 컴포넌트에 dehydrate 패턴을 사용해 QueryClient에 데이터를 전달하는 구조로 의존적으로 동작하도록 변경해 캐시를 관리했다.",
+        result:
+          "커뮤니티 페이지에 캐싱을 성공적으로 적용해 요청수를 40% 감소시켰다. 구현 패턴 개선을 통해 의도치 않은 path 초기화 제거, 일관성 있는 키 관리, Provider로 제공된 단일 QueryClient에 의존적인 구조로 변경해 쿼리 키 관리 로직 개선 효과를 얻을 수 있었다. 또한 SSR 방식을 유지하기로 결정함으로써 SEO를 개선할 수 있었다.",
+        thumnail: relifeTrouble1,
+      },
+      {
+        title: "CSRF 토큰 관리",
+        background:
+          "CSRF 공격을 방어하기 위해 POST/DELETE/UPDATE 요청에 대해 CSRF 토큰을 헤더에 싣어 보내줘야 했다. 백엔드 구현 중 이슈로 인해 로그인 구현이 매우 지연된 상태였고, 최대한 빠르게 구현하면서 다른 프론트엔드 팀원은 로직을 자세히 모르더라도 요청을 쉽게 하도록 구현하려고 했다.",
+        solution:
+          "서버에서의 토큰 관리와 클라이언트의 토큰 관리 방법은 서로 다르다. 그래서 양쪽에서 사용할 수 있는 인스턴스를 구성하면서 403 오류 발생 시 재요청하도록 로직을 구현했다. 모든 요청에 대해 해당 인스턴스들을 거치도록 팀에 공유하고 팀의 모든 요청은 fetcher 유틸 함수와 axios instance를 거치도록 변경했다.",
+        result:
+          "프로젝트 전체의 요청을 SSR에서 관리하는 nextFetcher, CSR에서 관리하는 instance api를 통과하도록 설계해 문제 발생 시 일관성 있게 대응 할 수 있게 되었고, 다른 팀원들은 자세한 로직을 모르더라도 쉽게 적용할 수 있도록 만들어졌다.",
+        thumnail: relifeTrouble2,
+      },
+    ],
     deployStatus: "백엔드 배포 중단",
     deployUrl: "https://relife.kr",
     youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
@@ -216,6 +242,25 @@ export const PROJECTS: ProjectDetail[] = [
       "WebSocket 기반 실시간 피드백과 보유 미션 기반 개인화된 페이지로 UX 개선",
       "디테일 페이지, 목록 페이지 캐시 관리로 요청량 20% 감소",
     ],
+    troubleShootings: [
+      {
+        title: "미션 트리거 로직 문제 개선",
+        background: "초기 기획 단계에서는 미션 트리거 관리 로직을 Zustand Store를 이용해 클라이언트단에서 제어하기로 계획했었다. 그러나 실제 구현 단계에서 실행을 점검하던 중 다음의 세 가지 문제가 있었다. 유저가 대량의 미션을 가지고 있다면 모든 미션에 대한 정보를 클라이언트에서 가져야 한다, 팬인/팬아웃 제어 복잡도 예측, 미션 조건 분석으로 인한 클라이언트 연산 부하",
+        solution: "구상한 해결 방안은 세 가지로, 이벤트 종류 줄이기(팬인 복잡도 줄이기), 유저 직접 클릭해서 완료 처리하기(실시간 기능 제거), 서버에서 구현하기(클라이언트 복잡도 제거) 기능 복잡도를 줄이는 방법은 서비스의 메인 기능이라고 할 수 있는 미션 기능 UX가 떨어질 것으로 예측해 서버로 책임을 이전하기로 제안했다.",
+        result: "Supabase RPC를 이용해 클라이언트에서 이벤트가 발생할 경우 이벤트 로그를 서버로 보내고, 그 로그를 통해 서버 DB의 유저가 수령한 미션의 완료여부를 판별하고 유저 완료 미션 테이블에 컬럼을 추가하도록 구현했다. 그 결과로 문제 배경에서 제시된 클라이언트 메모리 문제, 팬인/팬아웃 복잡도, 연산 부하를 제거하고 서버에 종속되도록 구현할 수 있었다.",
+        thumnail: pickItBookTrouble2,
+      },
+      {
+        title: "배포 직전 WhiteList 이슈 해결",
+        background:
+          "개발 환경에서는 localhost ip 주소를 도서관 API WhiteList에 등록해 사용하고 있었다. 그런데 배포 당일에 배포 환경인 Vercel에서 마무리 테스트 중 도서관 API 요청량 제한 500건을 초과하게 되어 조회가 불가능한 상황이 발생했다. Vercel 배포는 Enterprise 요금제를 제외하고 모두 동적 IP 할당이라는 것을 깨달았고, WhiteList 등록이 불가능하다는 사실을 알았다.",
+        solution:
+          "가장 빠르게 대처할 수 있는 해결책은 클라이언트 요청키를 변경해 요청수를 초기화하는 방법이었고, 근본적인 원인 해결은 IP를 고정시킬 수 있는 Proxy 서버를 구현하는 것이었다. 빠른 시간 내 처리가 필요했지만 다시 오류가 발생할 확률이 높은 방법보다 근본적인 해결법이 필요하다고 생각해 프록시 서버를 구현해 사용하는 방법을 선택했다.",
+        result:
+          "최대한 빠르게 해결해 3시간 이내로 처리할 수 있었다. 서버는 Nginx + Express를 이용해 구현했다. 또한 Vercel Proxy 설정을 변경하고 요청URL을 공통 함수로 불러오도록 처리해 기존 구현 내용을 대부분 그대로 사용할 수 있도록 했다. 시간이 부족했고, 단순 조회 처리만 이용하면 됐기 때문에 certbot은 붙이지 않았다. Nginx는 단순 라우팅만 동작하도록 구현해 키값을 서버에서 가지도록 한 뒤 고정 IP로 요청할 수 있는 구조를 만들어 오류를 해결했다.",
+        thumnail: pickItBookTrouble1,
+      },
+    ],
     teammate: "프론트팀 4명 (팀장)",
     deployStatus: "배포 중",
     deployUrl: "https://pick-it-book.vercel.app/",
@@ -313,7 +358,7 @@ export const PROJECTS: ProjectDetail[] = [
     title: "Portpolio",
     desc: "포트폴리오 사이트",
     period: "2025-10-20 ~ 2025-10-30",
-    background: "개인 포트폴리오 웹페이지를 만들고 싶어 제작하게 되었습니다.",
+    background: "윤대웅의 개인 포트폴리오 웹사이트입니다.",
     skills: ["React", "Vite", "TailwindCSS", "Framer Motion", "Vercel"],
     skillReason: [
       {
@@ -340,9 +385,27 @@ export const PROJECTS: ProjectDetail[] = [
         reason: "간편한 배포를 위해 선택했다.",
       },
     ],
+    charged: [
+      {
+        title: "프로젝트 디자인",
+        desc: "Figma를 이용한 프로젝트 디자인 작업",
+      },
+      {
+        title: "TextRoll 구현",
+        desc: "TextRoll 애니메이션과 인터렉션 구현",
+      },
+      {
+        title: "프로젝트 배포, 도메인 연결",
+        desc: "Vercel을 이용한 프로젝트 배포, 도메인 연결",
+      },
+      {
+        title: "백그라운드 영상 재생을 위한 편집 및 최적화",
+        desc: "백그라운드 영상 재생을 위한 편집 및 최적화",
+      },
+    ],
     teammate: "개인 프로젝트",
     deployStatus: "배포 중",
     deployUrl: "https://www.yoondaewoong.shop/",
-    tistoryUrl: "",
+    tistoryUrl: "https://yun-engene.tistory.com/107",
   },
 ];
