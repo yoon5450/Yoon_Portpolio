@@ -287,3 +287,30 @@ export const skillStyles: Record<string, string> = {
   "mediarecorder api": "bg-[#E34F26] text-white",
   "supabase realtime": "bg-[#3ECF8E] text-white",
 };
+
+export const mainSkillDetails: Record<string, string> = {
+  javascript:
+    " Promise, 실행 컨텍스트 구조, 이벤트 태스크 등의 고급 개념을 이해하고 설명 가능",
+  HTML5: "시맨틱 태그를 이해하고 적절한 위치에 사용 가능 ",
+  CSS3: " Grid, Flex 레이아웃을 적절하게 사용해 배치 및 반응형 작업이 가능",
+  React:
+    "SRP, 순수 함수 기반 컴포넌트 작업과 렌더링 트리거를 이해한 최적화 작업이 가능",
+  "Next.js":
+    " SEO 최적화, App Router 기반 라우팅 설계, SSR, CSR 차이를 이해하고 구현이 가능",
+  TanstackQuery:
+    "쿼리키를 이용한 캐싱 관리와 is, on 이벤트 이해, 낙관적 업데이트, dehydrate 패턴",
+  Zustand: "상태관리와 middleware를 이용한 확장성 이해",
+};
+
+export const subSkillDetails: Record<string, string> = {
+  "ESLint / Prettier": "코드 품질 관리 및 일관성 유지",
+  "Webpack/Vite": "번들링 및 빌드 파일 관리",
+  Supabase: "PostgreSQL을 이용한 RLS, RPC, View 관리 가능",
+  "AWS EC2": "CLI 환경에서의 환경 구성 및 VIM 사용 가능",
+  "Git / GitHub":
+    "GitHub Flow 기반 브랜치 관리 방법과 프로젝트 칸반보드, 이슈, PR 관리",
+  "react-hook-form":
+    "유효성 검증 스키마 기반 런타임 유효성 검증과 타입 추론, setValue / control를 이용한 중첩 폼 상태 관리",
+  Zod: "런타임 타입 검증과 타입 추론, 스키마 기반 런타임 유효성 검증",
+  Axios: "인터셉터를 이용한 헤더 설정과 CSRF 인증 실패 재인증 로직",
+};
