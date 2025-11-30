@@ -7,9 +7,9 @@ import pickItBookArchitecture from "@/assets/pickItBookArchitecture.png";
 import relifeArchitecture from "@/assets/relifeArchitecture.png";
 import relifeTrouble1 from "@/assets/relifeTrouble1.png";
 import relifeTrouble2 from "@/assets/relifeTrouble2.png";
-import pickItBookTrouble1 from "@/assets/pickItBookTrouble1.png";
-import pickItBookTrouble2 from "@/assets/pickItBookTrouble2.png";
-import musicMateTrouble1 from "@/assets/musicMateTrouble1.png";
+import pickItBookTrouble1 from "@/assets/pickitbookTrouble1.png";
+import pickItBookTrouble2 from "@/assets/pickitbookTrouble2.png";
+import musicMateTrouble1 from "@/assets/musicmateTrouble1.png";
 import type { ProjectDetail } from "./types";
 
 export const PROJECTS: ProjectDetail[] = [
