@@ -2,7 +2,7 @@ import ContactButton from "./ContactButton";
 
 function ContactSection() {
   return (
-    <div className="px-[8vw] py-10 md:p-20 w-full items-center justify-btw" id="contact">
+    <div className="flex flex-col gap-8 px-[8vw] py-10 md:p-20 w-full items-center justify-btw" id="contact">
       <h1 className="font-family-perm text-3xl font-normal">Contact Me</h1>
 
       <div className="flex gap-8 py-4 md:p-10 items-center flex-wrap">
@@ -17,7 +17,8 @@ function ContactSection() {
           </div>
           <div className="text-nowrap">언제든지 편하게 연락주세요!"</div>
         </div>
-        <div className="flex gap-4 items-center md:items-start w-full justify-center md:justify-end flex-wrap">
+      </div>
+      <div className="flex gap-4 items-center w-fit justify-center flex-wrap">
           <ContactButton
             iconName="github"
             text="GITHUB"
@@ -37,14 +38,6 @@ function ContactSection() {
             href="https://yun-engene.tistory.com/"
           />
         </div>
-      </div>
-      {/* <div className="flex items-center justify-center text-black text-l">
-        <span className="text-amber-500">GitHub</span>: @yoon5450 |&nbsp;
-        <span className="text-amber-500">EMAIL</span>: dbseodnd356@gmil.com
-        |&nbsp;
-        <span className="text-amber-500">tistory</span>:
-        https://yun-engene.tistory.com/
-      </div> */}
     </div>
   );
 }
