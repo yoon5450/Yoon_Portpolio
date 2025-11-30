@@ -7,7 +7,7 @@ interface TroubleShootingItemProps {
   background: string;
   solution: string;
   result: string;
-  thumnail: string;
+  thumnail?: string;
 }
 function TroubleShootingItem({
   title,
@@ -19,18 +19,38 @@ function TroubleShootingItem({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <li className="flex flex-col gap-4 border border-gray-200 rounded-md p-2 drop-shadow-md">
+    <li className="flex flex-col gap-4 border border-gray-200 bg-gray-100 rounded-md p-2 drop-shadow-md">
       <div
         className={tw(
           "flex gap-2 items-center",
           isExpanded && "border-b-2 border-gray-400 pb-1 p-2"
         )}
       >
-        <img src={thumnail} alt={title} className="w-20 h-full object-cover " />
+        {thumnail && (
+          <img
+            src={thumnail}
+            alt={title}
+            className="w-20 h-full object-cover "
+          />
+        )}
         <h2 className={tw("text-2xl font-semibold mb-2")}>{title}</h2>
       </div>
       <Activity mode={isExpanded ? "visible" : "hidden"}>
         <div className="flex flex-col gap-4">
+          {thumnail && (
+            <div>
+              <h3 className="w-fit text-xl font-semibold text-gray-800 border-b-2 border-amber-400 pb-1 px-2 mb-2">
+                도식 / 이미지
+              </h3>
+              <div className="w-full h-62 bg-white rounded-md p-2">
+                <img
+                  src={thumnail}
+                  alt={title}
+                  className="w-full h-full object-contain "
+                />
+              </div>
+            </div>
+          )}
           <div>
             <h3 className="w-fit text-xl font-semibold text-gray-800 border-b-2 border-amber-400 pb-1 px-2 mb-2">
               문제 배경

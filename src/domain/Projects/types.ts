@@ -27,7 +27,7 @@ export interface ProjectDetail {
   achievements?: string[];
   troubleShootings?: {
     title: string;
-    thumnail: string;
+    thumnail?: string;
     background: string;
     solution: string;
     result: string;
