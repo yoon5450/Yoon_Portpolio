@@ -7,38 +7,6 @@ import type { ProjectType } from "../types";
 
 const projects: ProjectType[] = [
   {
-    thumbnail: relifeThumb,
-    title: "Re:Life",
-    desc: "AI 평행우주 시나리오 조회 플랫폼",
-    period: "2025-09-15 ~ 2025-10-16 (4주) 진행",
-    teammate: "프론트엔드팀 3명-백엔드팀 5명 | 프론트팀 팀장",
-    background:
-      '인생의 중요한 선택에서 "만약 그때 다른 선택을 했다면?" 이라는 궁금증에서 출발한 프로젝트입니다. 사용자의 성향과 그 시점의 선택에 따라 평행우주 인생 시나리오를 시뮬레이션하는 서비스입니다.',
-    skills: [
-      "React",
-      "Next.js",
-      "TailwindCSS",
-      "GSAP",
-      "react-hook-form",
-      "zod",
-      "axios",
-      "Tanstack Query",
-    ],
-    charged: [
-      {
-        title: "프론트엔드 아키텍처 설계",
-        desc: "접근 권한 기반 라우팅 구조 정의, Feature-based 디렉터리 구조로 코드 응집도 향상",
-      },
-      {
-        title: "Server Action 기반 인증 시스템 구현",
-        desc: "민감 정보(로그인 / 회원가입) Server Action으로 처리, CookieStore 및 Axios InterCeptor로 CSRF 토큰 자동 주입, CSRF 공격 방어",
-      },
-    ],
-    deployStatus: "백엔드 배포 중단",
-    deployUrl: "https://relife.kr",
-    youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
-  },
-  {
     thumbnail: pickItBookThumb,
     title: "PickItBook",
     desc: "미션 기반 독서 커뮤니티",
@@ -70,6 +38,37 @@ const projects: ProjectType[] = [
     deployStatus: "배포 중",
     deployUrl: "https://pick-it-book.vercel.app/",
     youtubeUrl: "https://youtu.be/DApI3ST66kQ",
+  },
+  {
+    thumbnail: relifeThumb,
+    title: "Re:Life",
+    desc: "AI 평행우주 시나리오 조회 플랫폼",
+    period: "2025-09-15 ~ 2025-10-16 (4주) 진행",
+    teammate: "프론트엔드팀 3명-백엔드팀 5명 | 프론트팀 팀장",
+    background:
+      '인생의 중요한 선택에서 "만약 그때 다른 선택을 했다면?" 이라는 궁금증에서 출발한 프로젝트입니다. 사용자의 성향과 그 시점의 선택에 따라 평행우주 인생 시나리오를 시뮬레이션하는 서비스입니다.',
+    skills: [
+      "React",
+      "Next.js",
+      "TailwindCSS",
+      "GSAP",
+      "react-hook-form",
+      "zod",
+      "axios",
+      "Tanstack Query",
+    ],
+    charged: [
+      {
+        title: "프론트엔드 아키텍처 설계",
+        desc: "접근 권한 기반 라우팅 구조 정의, Feature-based 디렉터리 구조로 코드 응집도 향상",
+      },
+      {
+        title: "Server Action 기반 인증 시스템 구현",
+        desc: "민감 정보(로그인 / 회원가입) Server Action으로 처리, CookieStore 및 Axios InterCeptor로 CSRF 토큰 자동 주입, CSRF 공격 방어",
+      },
+    ],
+    deployStatus: "AWS 기간 종료로 배포 중단",
+    youtubeUrl: "https://youtu.be/9T7L8-4rH9M",
   },
   {
     thumbnail: musicMateThumb,
