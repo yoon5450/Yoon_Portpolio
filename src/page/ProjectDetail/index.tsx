@@ -92,7 +92,7 @@ function ProjectDetail() {
         {project.architecture && (
           <section>
             <h2 className="text-2xl font-semibold mb-2">프로젝트 아키텍쳐</h2>
-            <img src={project.architecture} />
+            <img src={project.architecture} alt={`${project.title} 아키텍처`} />
           </section>
         )}
 
