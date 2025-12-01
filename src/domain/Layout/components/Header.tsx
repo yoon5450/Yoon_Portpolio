@@ -206,7 +206,7 @@ function Header({ variant = "transparent" }: HeaderProps) {
       {/* 모바일 전체 화면 메뉴 */}
       <div
         className={tw(
-          "md:hidden fixed inset-0 bg-deep-navy transition-all duration-500 ease-in-out",
+          "md:hidden fixed inset-0 bg-primary-background transition-all duration-500 ease-in-out",
           isMenuOpen
             ? "opacity-100 pointer-events-auto z-50"
             : "opacity-0 pointer-events-none"
@@ -225,40 +225,59 @@ function Header({ variant = "transparent" }: HeaderProps) {
         >
           <ul className="flex flex-col items-center space-y-10">
             <li>
-              <Link
-                to="/onboarding/profile-settings"
+              <button
                 className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                프로젝트
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/scenario-list"
-                className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("about");
+                }}
               >
                 자기소개
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="/community"
+              <button
                 className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("peerReview");
+                }}
+              >
+                피어리뷰
+              </button>
+            </li>
+            <li>
+              <button
+                className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("skills");
+                }}
               >
                 기술 스택
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="/projects"
+              <button
                 className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("projects");
+                }}
               >
                 프로젝트
-              </Link>
+              </button>
+            </li>
+            <li>
+              <button
+                className="!text-2xl text-white font-medium group relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("contact");
+                }}
+              >
+                연락처
+              </button>
             </li>
           </ul>
         </nav>

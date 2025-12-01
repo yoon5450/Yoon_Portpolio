@@ -22,7 +22,7 @@ export interface ProjectDetail {
   teammate: string;
   background?: string;
   skills?: string[];
-  skillReason?: Record<string, string>[];
+  skillReason?: { skill: string; reason: string }[];
   charged?: { title: string; desc: string }[];
   achievements?: string[];
   troubleShootings?: {
