@@ -7,7 +7,7 @@ import { getYouTubeEmbedUrl } from "@/utils/getYouTubeEmbedUrl";
 import tw from "@/utils/tw";
 import { useState } from "react";
 import { AiOutlineLink } from "react-icons/ai";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 function ProjectDetail() {
   const { projectName } = useParams();
@@ -197,36 +197,36 @@ function ProjectDetail() {
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">링크</h2>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             {project.deployUrl && (
-              <a
-                href={project.deployUrl}
+              <Link
+                to={project.deployUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 duration-100"
+                className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 duration-100 text-nowrap"
               >
                 배포 사이트
-              </a>
+              </Link>
             )}
             {project.tistoryUrl && (
-              <a
-                href={project.tistoryUrl}
+              <Link
+                to={project.tistoryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-400 duration-100"
+                className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-400 duration-100 text-nowrap"
               >
                 블로그 회고
-              </a>
+              </Link>
             )}
             {project.youtubeUrl && (
-              <a
-                href={project.youtubeUrl}
+              <Link
+                to={project.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-400"
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-400 text-nowrap"
               >
                 시연 영상
-              </a>
+              </Link>
             )}
           </div>
         </section>
